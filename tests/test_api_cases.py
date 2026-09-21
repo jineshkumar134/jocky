@@ -3,7 +3,7 @@ Tests for JOCKY API Case & Investigation Endpoints (Phase 14)
 """
 import pytest
 from httpx import ASGITransport, AsyncClient
-from api.main import app
+from server.main import app
 
 
 @pytest.mark.asyncio

@@ -3,7 +3,7 @@ Health Check Routes for JOCKY API
 """
 from fastapi import APIRouter, Depends
 from pydantic import BaseModel
-from api.config import Settings, get_settings
+from server.config import Settings, get_settings
 
 router = APIRouter(tags=["Health"])
 

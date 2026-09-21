@@ -9,7 +9,7 @@ root_dir = Path(__file__).resolve().parent.parent
 if str(root_dir) not in sys.path:
     sys.path.insert(0, str(root_dir))
 
-from api.main import app
+from server.main import app
 
 # Export app for Vercel Serverless Functions
 __all__ = ["app"]

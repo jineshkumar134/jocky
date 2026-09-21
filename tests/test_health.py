@@ -3,7 +3,7 @@ Tests for JOCKY API Health & Root Endpoints
 """
 import pytest
 from httpx import ASGITransport, AsyncClient
-from api.main import app
+from server.main import app
 
 
 @pytest.mark.asyncio

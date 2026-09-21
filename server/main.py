@@ -3,8 +3,8 @@ JOCKY FastAPI Application Entrypoint
 """
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from api.config import get_settings
-from api.routes import health
+from server.config import get_settings
+from server.routes import health, cases
 
 settings = get_settings()
 
@@ -25,8 +25,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Include Routers with both /api and root prefixes for serverless compatibility
-from api.routes import cases
+# Include Routers with both /api and root prefixes for serverless routing compatibility
 app.include_router(health.router, prefix="/api")
 app.include_router(cases.router, prefix="/api")
 app.include_router(health.router)
@@ -45,4 +44,4 @@ async def root():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("api.main:app", host=settings.API_HOST, port=settings.API_PORT, reload=settings.DEBUG)
+    uvicorn.run("server.main:app", host=settings.API_HOST, port=settings.API_PORT, reload=settings.DEBUG)
