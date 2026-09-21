@@ -1,0 +1,50 @@
+[
+  {
+    "tx_hash": "0xTX001",
+    "chain": "ethereum",
+    "block_number": 19500100,
+    "timestamp": "2026-09-12T16:00:00Z",
+    "from_address": "0xWALLET001",
+    "to_address": "0xWALLET002",
+    "asset": "ETH",
+    "amount": 10.5,
+    "status": "confirmed",
+    "transaction_type": "transfer",
+    "metadata": {
+      "gas_used": 21000,
+      "gas_price_gwei": 25.0
+    }
+  },
+  {
+    "tx_hash": "0xTX002",
+    "chain": "ethereum",
+    "block_number": 19500160,
+    "timestamp": "2026-09-12T16:15:00Z",
+    "from_address": "0xWALLET002",
+    "to_address": "0xWALLET003",
+    "asset": "ETH",
+    "amount": 10.49,
+    "status": "confirmed",
+    "transaction_type": "transfer",
+    "metadata": {
+      "gas_used": 21000,
+      "gas_price_gwei": 26.5
+    }
+  },
+  {
+    "tx_hash": "0xTX003",
+    "chain": "ethereum",
+    "block_number": 19500200,
+    "timestamp": "2026-09-12T17:00:00Z",
+    "from_address": "0xWALLET004",
+    "to_address": "0xWALLET003",
+    "asset": "ETH",
+    "amount": 5.0,
+    "status": "confirmed",
+    "transaction_type": "transfer",
+    "metadata": {
+      "gas_used": 21000,
+      "gas_price_gwei": 24.0
+    }
+  }
+]

@@ -1,0 +1,44 @@
+{
+  "0xWALLET001": {
+    "address": "0xWALLET001",
+    "chain": "ethereum",
+    "label": "Synthetic Suspicious EOA",
+    "wallet_type": "eoa",
+    "confidence": 0.95,
+    "balance": 0.5,
+    "first_seen": "2026-09-10T12:00:00Z",
+    "last_seen": "2026-09-12T16:00:00Z"
+  },
+  "0xWALLET002": {
+    "address": "0xWALLET002",
+    "chain": "ethereum",
+    "label": "Synthetic Intermediary Node",
+    "wallet_type": "eoa",
+    "confidence": 0.90,
+    "balance": 0.01,
+    "first_seen": "2026-09-12T16:00:00Z",
+    "last_seen": "2026-09-12T16:15:00Z"
+  },
+  "0xWALLET003": {
+    "address": "0xWALLET003",
+    "chain": "ethereum",
+    "label": "Example Exchange Deposit",
+    "wallet_type": "exchange_deposit",
+    "vasp_id": "VASP-EXCHANGE-01",
+    "confidence": 0.98,
+    "balance": 10.49,
+    "first_seen": "2026-08-01T00:00:00Z",
+    "last_seen": "2026-09-12T16:15:00Z"
+  },
+  "0xWALLET004": {
+    "address": "0xWALLET004",
+    "chain": "ethereum",
+    "label": "Example Custody Cold Storage",
+    "wallet_type": "custodial",
+    "vasp_id": "VASP-CUSTODY-02",
+    "confidence": 0.95,
+    "balance": 500.0,
+    "first_seen": "2026-01-15T00:00:00Z",
+    "last_seen": "2026-09-10T08:00:00Z"
+  }
+}

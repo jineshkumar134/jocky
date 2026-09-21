@@ -1,0 +1,28 @@
+{
+  "VASP-EXCHANGE-01": {
+    "vasp_id": "VASP-EXCHANGE-01",
+    "name": "Example Exchange",
+    "jurisdiction": "Synthetic Lab Jurisdiction",
+    "risk_rating": "low",
+    "public_deposit_patterns": [
+      "0xWALLET003"
+    ],
+    "keywords": [
+      "Example Exchange",
+      "exchange_deposit"
+    ]
+  },
+  "VASP-CUSTODY-02": {
+    "vasp_id": "VASP-CUSTODY-02",
+    "name": "Example Custody Services",
+    "jurisdiction": "Synthetic Lab Jurisdiction",
+    "risk_rating": "low",
+    "public_deposit_patterns": [
+      "0xWALLET004"
+    ],
+    "keywords": [
+      "Example Custody",
+      "custodial"
+    ]
+  }
+}

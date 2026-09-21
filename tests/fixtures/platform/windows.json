@@ -1,0 +1,30 @@
+{
+  "platform_info": {
+    "os_name": "Windows",
+    "os_version": "10.0.19045",
+    "architecture": "AMD64",
+    "hostname": "WIN-FORENSIC-01",
+    "runtime": "Python 3.11.6",
+    "adapter_name": "WindowsPlatformAdapter"
+  },
+  "security_status": {
+    "hvci": {
+      "applicable": true,
+      "available": true,
+      "enabled": true,
+      "source": "registry"
+    },
+    "vbs": {
+      "applicable": true,
+      "available": true,
+      "enabled": false,
+      "source": "registry"
+    },
+    "secure_boot": {
+      "applicable": true,
+      "available": false,
+      "enabled": null,
+      "source": null
+    }
+  }
+}

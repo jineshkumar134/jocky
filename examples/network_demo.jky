@@ -1,0 +1,11 @@
+// ==========================================
+// JOCKY Network Forensics Investigation Demo
+// Phase 5: Network Analysis Pipeline
+// ==========================================
+
+CASE "NETWORK-DEMO-001"
+
+HOST "LOCAL-HOST"
+
+// 1. Analyze network connections, listeners, and DNS
+ANALYZE NETWORK

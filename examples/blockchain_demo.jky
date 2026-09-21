@@ -1,0 +1,10 @@
+// JOCKY Investigation Script: Blockchain Tracing & VASP Attribution
+// Demonstrates multi-hop EVM tracing and explainable VASP attribution.
+
+CASE "INC-2026-BLOCKCHAIN"
+HOST "LAB-PC-01"
+
+BLOCKCHAIN TRACE "0xWALLET001"
+IDENTIFY VASP
+
+GENERATE REPORT

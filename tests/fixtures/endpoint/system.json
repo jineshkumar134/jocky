@@ -1,0 +1,11 @@
+{
+  "type": "SYSTEM",
+  "hostname": "LAB-PC-01",
+  "os": "Linux",
+  "architecture": "x86_64",
+  "kernel": "6.8.0-40-generic",
+  "runtime": "Python 3.12.3 (CPython)",
+  "cpu_count": 8,
+  "memory_total_bytes": 16777216000,
+  "boot_time": "2026-09-12T08:00:00Z"
+}

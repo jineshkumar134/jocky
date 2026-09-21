@@ -1,0 +1,20 @@
+// ==========================================
+// JOCKY Endpoint Forensics Investigation Demo
+// Phase 4: Endpoint Analysis Pipeline
+// ==========================================
+
+CASE "ENDPOINT-DEMO-001"
+
+HOST "LOCAL-HOST"
+
+// 1. Enumerate and hash files
+ANALYZE FILES
+
+// 2. Enumerate active processes
+ANALYZE PROCESSES
+
+// 3. Inspect host environment & runtime
+ANALYZE SYSTEM
+
+// 4. Report trigger (reserved for reporting phase)
+GENERATE REPORT

@@ -1,0 +1,54 @@
+[
+  {
+    "type": "NETWORK_CONNECTION",
+    "protocol": "TCP",
+    "local_address": "192.168.1.50",
+    "local_port": 49152,
+    "remote_address": "203.0.113.25",
+    "remote_port": 443,
+    "status": "ESTABLISHED",
+    "pid": 4821,
+    "process_name": "suspicious_miner",
+    "timestamp": "2026-09-12T14:46:00Z",
+    "direction": "outbound",
+    "risk_indicators": [
+      "external_remote_address",
+      "encrypted_transport_indicator",
+      "process_associated"
+    ]
+  },
+  {
+    "type": "NETWORK_CONNECTION",
+    "protocol": "TCP",
+    "local_address": "192.168.1.50",
+    "local_port": 51234,
+    "remote_address": "198.51.100.20",
+    "remote_port": 443,
+    "status": "ESTABLISHED",
+    "pid": 5102,
+    "process_name": "c2_client",
+    "timestamp": "2026-09-12T15:13:00Z",
+    "direction": "outbound",
+    "risk_indicators": [
+      "external_remote_address",
+      "encrypted_transport_indicator",
+      "process_associated"
+    ]
+  },
+  {
+    "type": "NETWORK_CONNECTION",
+    "protocol": "TCP",
+    "local_address": "192.168.1.50",
+    "local_port": 54320,
+    "remote_address": "192.0.2.10",
+    "remote_port": 8080,
+    "status": "TIME_WAIT",
+    "pid": null,
+    "process_name": null,
+    "timestamp": "2026-09-12T15:15:00Z",
+    "direction": "outbound",
+    "risk_indicators": [
+      "external_remote_address"
+    ]
+  }
+]

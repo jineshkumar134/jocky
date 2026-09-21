@@ -1,0 +1,47 @@
+[
+  {
+    "scenario_id": "synthetic_polymorphism",
+    "name": "Safe Polymorphic Representation Benchmark",
+    "category": "POLYMORPHISM",
+    "description": "Benchmarks detector variation across benign representation transforms without executing payloads.",
+    "safety_level": "SAFE_BENCHMARK",
+    "simulated": true,
+    "expected_observables": ["SYNTHETIC_POLYMORPHIC_TRANSFORMATION"]
+  },
+  {
+    "scenario_id": "synthetic_memory_execution",
+    "name": "Simulated Memory Allocation Research",
+    "category": "MEMORY_EXECUTION",
+    "description": "Simulates telemetry events for RWX allocation detection without injecting code or touching memory.",
+    "safety_level": "SAFE_SYNTHETIC",
+    "simulated": true,
+    "expected_observables": ["SYNTHETIC_MEMORY_ALLOCATION"]
+  },
+  {
+    "scenario_id": "synthetic_driver_risk",
+    "name": "Simulated Driver Vulnerability & BYOVD Risk",
+    "category": "DRIVER_RISK",
+    "description": "Classifies driver risk against synthetic catalog indicators without loading or communicating with drivers.",
+    "safety_level": "SAFE_SYNTHETIC",
+    "simulated": true,
+    "expected_observables": ["SYNTHETIC_DRIVER_RECORD"]
+  },
+  {
+    "scenario_id": "synthetic_security_controls",
+    "name": "Security Control Evaluation Simulation",
+    "category": "SECURITY_CONTROL",
+    "description": "Assesses security posture states (ENABLED/DISABLED/UNKNOWN/NOT APPLICABLE) without mutating controls.",
+    "safety_level": "SAFE_INSPECTION",
+    "simulated": true,
+    "expected_observables": ["SECURITY_CONTROL_STATE"]
+  },
+  {
+    "scenario_id": "synthetic_network_behavior",
+    "name": "Safe Network Flow Behavior Simulation",
+    "category": "NETWORK_BEHAVIOR",
+    "description": "Evaluates egress detection rules against documentation IP space without transmitting packets.",
+    "safety_level": "SAFE_SYNTHETIC",
+    "simulated": true,
+    "expected_observables": ["SYNTHETIC_NETWORK_CONNECTION"]
+  }
+]

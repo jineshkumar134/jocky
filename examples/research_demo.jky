@@ -1,0 +1,8 @@
+CASE "SEC-LAB-2026"
+HOST "LAB-PC-01"
+
+RESEARCH "synthetic_polymorphism"
+RESEARCH "synthetic_memory_execution"
+RESEARCH "synthetic_driver_risk"
+RESEARCH "synthetic_security_controls"
+RESEARCH "synthetic_network_behavior"

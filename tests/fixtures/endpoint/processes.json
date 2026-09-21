@@ -1,0 +1,35 @@
+[
+  {
+    "type": "PROCESS",
+    "pid": 1042,
+    "name": "systemd",
+    "parent_pid": 1,
+    "executable": "/usr/lib/systemd/systemd",
+    "username": "root",
+    "start_time": "2026-09-12T08:00:00Z",
+    "status": "running",
+    "error": null
+  },
+  {
+    "type": "PROCESS",
+    "pid": 4821,
+    "name": "suspicious_miner",
+    "parent_pid": 1042,
+    "executable": "/tmp/suspicious_miner",
+    "username": "lab_user",
+    "start_time": "2026-09-12T14:45:10Z",
+    "status": "running",
+    "error": null
+  },
+  {
+    "type": "PROCESS",
+    "pid": 5102,
+    "name": "c2_client",
+    "parent_pid": 4821,
+    "executable": "/opt/security_lab/scripts/stealth_beacon.py",
+    "username": "lab_user",
+    "start_time": "2026-09-12T15:12:00Z",
+    "status": "sleeping",
+    "error": null
+  }
+]

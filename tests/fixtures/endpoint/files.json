@@ -1,0 +1,41 @@
+[
+  {
+    "type": "FILE",
+    "path": "/opt/security_lab/payloads/ransomware_dropper.bin",
+    "name": "ransomware_dropper.bin",
+    "extension": ".bin",
+    "size": 49152,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "created_at": "2026-09-12T14:30:00Z",
+    "modified_at": "2026-09-12T14:32:15Z",
+    "accessed_at": "2026-09-12T14:35:00Z",
+    "file_type": "binary",
+    "error": null
+  },
+  {
+    "type": "FILE",
+    "path": "/opt/security_lab/scripts/stealth_beacon.py",
+    "name": "stealth_beacon.py",
+    "extension": ".py",
+    "size": 8192,
+    "sha256": "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a",
+    "created_at": "2026-09-12T15:10:00Z",
+    "modified_at": "2026-09-12T15:11:22Z",
+    "accessed_at": "2026-09-12T15:15:00Z",
+    "file_type": "script",
+    "error": null
+  },
+  {
+    "type": "FILE",
+    "path": "/opt/security_lab/notes/ransom_note.txt",
+    "name": "ransom_note.txt",
+    "extension": ".txt",
+    "size": 1024,
+    "sha256": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+    "created_at": "2026-09-12T16:00:00Z",
+    "modified_at": "2026-09-12T16:00:05Z",
+    "accessed_at": "2026-09-12T16:01:00Z",
+    "file_type": "text",
+    "error": null
+  }
+]

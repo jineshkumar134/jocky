@@ -1,0 +1,30 @@
+{
+  "platform_info": {
+    "os_name": "Ubuntu 22.04 LTS",
+    "os_version": "22.04",
+    "architecture": "x86_64",
+    "hostname": "LINUX-FORENSIC-01",
+    "runtime": "Python 3.11.6",
+    "adapter_name": "LinuxPlatformAdapter"
+  },
+  "security_status": {
+    "hvci": {
+      "applicable": false,
+      "available": false,
+      "enabled": null,
+      "source": "unsupported_on_linux"
+    },
+    "vbs": {
+      "applicable": false,
+      "available": false,
+      "enabled": null,
+      "source": "unsupported_on_linux"
+    },
+    "secure_boot": {
+      "applicable": true,
+      "available": true,
+      "enabled": true,
+      "source": "sysfs:efivars"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "type": "LISTENER",
+    "protocol": "TCP",
+    "local_address": "0.0.0.0",
+    "local_port": 8080,
+    "pid": 6200,
+    "process_name": "example_server",
+    "status": "LISTEN",
+    "risk_indicators": [
+      "listening_on_all_interfaces",
+      "process_associated"
+    ]
+  },
+  {
+    "type": "LISTENER",
+    "protocol": "TCP",
+    "local_address": "127.0.0.1",
+    "local_port": 27017,
+    "pid": 1105,
+    "process_name": "mongod",
+    "status": "LISTEN",
+    "risk_indicators": [
+      "process_associated"
+    ]
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "platform_info": {
+    "os_name": "GenericOS",
+    "os_version": "1.0.0",
+    "architecture": "arm64",
+    "hostname": "GENERIC-FORENSIC-01",
+    "runtime": "Python 3.11.6",
+    "adapter_name": "GenericPlatformAdapter"
+  },
+  "security_status": {
+    "hvci": {
+      "applicable": false,
+      "available": false,
+      "enabled": null,
+      "source": "not_applicable"
+    },
+    "vbs": {
+      "applicable": false,
+      "available": false,
+      "enabled": null,
+      "source": "not_applicable"
+    },
+    "secure_boot": {
+      "applicable": false,
+      "available": false,
+      "enabled": null,
+      "source": "generic_unsupported"
+    }
+  }
+}

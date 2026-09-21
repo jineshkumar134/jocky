@@ -1,0 +1,29 @@
+// ==========================================================
+// JOCKY Forensic Investigation Script Sample
+// Case: Incident INC-2026-001
+// ==========================================================
+
+CASE "INC-2026-001"
+
+HOST "LAB-PC-01"
+
+// 1. Endpoint Forensics
+ANALYZE FILES
+ANALYZE PROCESSES
+ANALYZE NETWORK
+
+// 2. Network & C2 Detection
+TRACE SUSPICIOUS CONNECTIONS
+
+// 3. Blockchain Intelligence
+BLOCKCHAIN TRACE "0xABC1237890abcdef1234567890abcdef12345678"
+IDENTIFY VASP
+
+// 4. Synthesis & Graph Generation
+CORRELATE EVIDENCE
+BUILD TIMELINE
+BUILD ATTACK GRAPH
+
+// 5. Proof of Integrity & Reporting
+ANCHOR EVIDENCE
+GENERATE REPORT

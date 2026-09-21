@@ -1,0 +1,32 @@
+// JOCKY Investigation Script
+// Case: Ransomware + Crypto-laundering Incident
+// Generated: 2026-09-13
+
+CASE "INC-2026-001"
+
+HOST "LAB-PC-01"
+
+// Step 1 – Endpoint Forensics
+ANALYZE FILES
+ANALYZE PROCESSES
+ANALYZE NETWORK
+
+// Step 2 – Network Forensics
+TRACE SUSPICIOUS CONNECTIONS
+
+// Step 3 – Blockchain Intelligence
+BLOCKCHAIN TRACE "0xABC1237890abcdef1234567890abcdef12345678"
+
+IDENTIFY VASP
+
+// Step 4 – Synthesis
+CORRELATE EVIDENCE
+
+BUILD TIMELINE
+
+BUILD ATTACK GRAPH
+
+// Step 5 – Proof & Reporting
+ANCHOR EVIDENCE
+
+GENERATE REPORT
