@@ -25,10 +25,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Include Routers
+# Include Routers with both /api and root prefixes for serverless compatibility
 from api.routes import cases
 app.include_router(health.router, prefix="/api")
 app.include_router(cases.router, prefix="/api")
+app.include_router(health.router)
+app.include_router(cases.router)
 
 
 @app.get("/")

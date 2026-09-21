@@ -1,11 +1,13 @@
 """
 Vercel Serverless Entrypoint for JOCKY FastAPI Backend
 """
-import os
 import sys
+from pathlib import Path
 
-# Ensure project root is on sys.path so modules can be imported
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Add project root directory to sys.path
+root_dir = Path(__file__).resolve().parent.parent
+if str(root_dir) not in sys.path:
+    sys.path.insert(0, str(root_dir))
 
 from api.main import app
 
