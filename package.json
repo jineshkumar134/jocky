@@ -1,0 +1,9 @@
+{
+  "name": "jocky",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "cd dashboard && npm install && npm run build",
+    "dev": "cd dashboard && npm run dev"
+  }
+}
