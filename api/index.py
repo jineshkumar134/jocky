@@ -31,5 +31,11 @@ except Exception as e:
             },
         )
 
-# Export app for Vercel Serverless Functions
-__all__ = ["app"]
+# Support both native ASGI (app) and Lambda event handler (handler)
+try:
+    from mangum import Mangum
+    handler = Mangum(app)
+except Exception:
+    handler = app
+
+__all__ = ["app", "handler"]
