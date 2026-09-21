@@ -2,6 +2,8 @@
 JOCKY Configuration Settings
 """
 from functools import lru_cache
+from typing import Any
+from pydantic import field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -36,7 +38,36 @@ class Settings(BaseSettings):
         extra="ignore"
     )
 
+    @field_validator("EVM_CHAIN_ID", mode="before")
+    @classmethod
+    def parse_chain_id(cls, v: Any) -> int:
+        if isinstance(v, str):
+            v = v.strip()
+            if not v:
+                return 11155111
+            try:
+                return int(v)
+            except ValueError:
+                return 11155111
+        return int(v) if v is not None else 11155111
+
+    @field_validator("API_PORT", mode="before")
+    @classmethod
+    def parse_port(cls, v: Any) -> int:
+        if isinstance(v, str):
+            v = v.strip()
+            if not v:
+                return 8000
+            try:
+                return int(v)
+            except ValueError:
+                return 8000
+        return int(v) if v is not None else 8000
+
 
 @lru_cache
 def get_settings() -> Settings:
-    return Settings()
+    try:
+        return Settings()
+    except Exception:
+        return Settings(_env_file=None)
