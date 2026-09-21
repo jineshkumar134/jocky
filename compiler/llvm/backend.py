@@ -51,8 +51,14 @@ import re
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional
 
-import llvmlite.ir       as ll
-import llvmlite.binding  as llvm
+try:
+    import llvmlite.ir as ll
+    import llvmlite.binding as llvm
+    HAS_LLVMLITE = True
+except Exception:
+    ll = None
+    llvm = None
+    HAS_LLVMLITE = False
 
 from compiler.ir.nodes import (
     InvestigationIR,
@@ -127,6 +133,11 @@ class JockyLLVMBackend:
 
     def generate(self) -> LLVMResult:
         """Run the full lowering and return a :class:`LLVMResult`."""
+        if not HAS_LLVMLITE:
+            return LLVMResult(
+                ok=False,
+                errors=["llvmlite library is not available in this runtime environment."],
+            )
         module_name = _safe_id(f"jocky_{self._ir.case_id}")
         try:
             self._module = ll.Module(name=module_name)
