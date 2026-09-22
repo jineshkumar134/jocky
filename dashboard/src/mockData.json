@@ -1,8 +1,8 @@
 {
   "case_id": "JOCKY-FINAL-2026",
   "host": "LAB-PC-01",
-  "started_at": "2026-09-22T16:54:16.562369+00:00",
-  "completed_at": "2026-09-22T16:54:16.596197+00:00",
+  "started_at": "2026-09-22T17:14:40.583869+00:00",
+  "completed_at": "2026-09-22T17:14:40.617269+00:00",
   "summary": {
     "total_operations": 24,
     "successful_operations": 22,
@@ -21,7 +21,7 @@
           "os_version": "22.04",
           "architecture": "x86_64",
           "hostname": "LAB-PC-01",
-          "runtime": "Python 3.11.6",
+          "runtime": "Python 3.12.3 (CPython)",
           "adapter_name": "LinuxPlatformAdapter"
         },
         "security_status": {
@@ -91,7 +91,7 @@
         "host": "LAB-PC-01",
         "operation": "ANALYZE_SYSTEM",
         "status": "SUCCESS",
-        "timestamp": "2026-09-22T16:54:16.563436+00:00",
+        "timestamp": "2026-09-22T17:14:40.584801+00:00",
         "artifacts": [
           {
             "type": "SYSTEM",
@@ -115,7 +115,7 @@
             "os_version": "22.04",
             "architecture": "x86_64",
             "hostname": "LAB-PC-01",
-            "runtime": "Python 3.11.6",
+            "runtime": "Python 3.12.3 (CPython)",
             "adapter_name": "LinuxPlatformAdapter"
           }
         },
@@ -131,7 +131,7 @@
         "host": "LAB-PC-01",
         "operation": "ANALYZE_FILES",
         "status": "SUCCESS",
-        "timestamp": "2026-09-22T16:54:16.563592+00:00",
+        "timestamp": "2026-09-22T17:14:40.584941+00:00",
         "artifacts": [
           {
             "type": "FILE",
@@ -191,7 +191,7 @@
         "host": "LAB-PC-01",
         "operation": "ANALYZE_PROCESSES",
         "status": "SUCCESS",
-        "timestamp": "2026-09-22T16:54:16.563697+00:00",
+        "timestamp": "2026-09-22T17:14:40.585033+00:00",
         "artifacts": [
           {
             "type": "PROCESS",
@@ -244,7 +244,7 @@
         "host": "LAB-PC-01",
         "operation": "ANALYZE_NETWORK",
         "status": "SUCCESS",
-        "timestamp": "2026-09-22T16:54:16.563950+00:00",
+        "timestamp": "2026-09-22T17:14:40.585265+00:00",
         "connections": [
           {
             "type": "NETWORK_CONNECTION",
@@ -584,7 +584,7 @@
             "score": 0.95,
             "explanation": "Process 'suspicious_miner' (PID 4821) and network connection to 203.0.113.25:443 share PID 4821.  This is a direct PID observation \u2014 both evidence records identify the same process ID.",
             "rule_id": "PROCESS_NETWORK_PID_MATCH",
-            "timestamp": "2026-09-22T16:54:16.568296+00:00",
+            "timestamp": "2026-09-22T17:14:40.589650+00:00",
             "metadata": {
               "pid": 4821,
               "process_name": "suspicious_miner",
@@ -606,7 +606,7 @@
             "score": 0.95,
             "explanation": "Process 'c2_client' (PID 5102) and network connection to 198.51.100.20:443 share PID 5102.  This is a direct PID observation \u2014 both evidence records identify the same process ID.",
             "rule_id": "PROCESS_NETWORK_PID_MATCH",
-            "timestamp": "2026-09-22T16:54:16.568321+00:00",
+            "timestamp": "2026-09-22T17:14:40.589675+00:00",
             "metadata": {
               "pid": 5102,
               "process_name": "c2_client",
@@ -628,7 +628,7 @@
             "score": 0.9,
             "explanation": "Network connection to 203.0.113.25 is correlated with DNS record for 'mining-pool.internal', which resolves to 203.0.113.25.  The IP address appears explicitly in the DNS record's address list.",
             "rule_id": "NETWORK_DNS_RECORD_MATCH",
-            "timestamp": "2026-09-22T16:54:16.568343+00:00",
+            "timestamp": "2026-09-22T17:14:40.589697+00:00",
             "metadata": {
               "remote_address": "203.0.113.25",
               "domain": "mining-pool.internal",
@@ -649,7 +649,7 @@
             "score": 0.9,
             "explanation": "Network connection to 198.51.100.20 is correlated with DNS record for 'c2-gate.internal', which resolves to 198.51.100.20.  The IP address appears explicitly in the DNS record's address list.",
             "rule_id": "NETWORK_DNS_RECORD_MATCH",
-            "timestamp": "2026-09-22T16:54:16.568357+00:00",
+            "timestamp": "2026-09-22T17:14:40.589711+00:00",
             "metadata": {
               "remote_address": "198.51.100.20",
               "domain": "c2-gate.internal",
@@ -670,7 +670,7 @@
             "score": 0.65,
             "explanation": "Network endpoint 203.0.113.25 is associated with wallet 0xWALLET001 (Synthetic Suspicious EOA) through an explicit fixture mapping (mapping_type='observed_endpoint').  This correlation is based on a curated public/fixture dataset and does NOT establish ownership of the wallet by the network operator.  Note: Synthetic fixture: IP 203.0.113.25 observed as a blockchain-related network endpoint. Does not establish wallet ownership.",
             "rule_id": "NETWORK_BLOCKCHAIN_EXPLICIT_MAPPING",
-            "timestamp": "2026-09-22T16:54:16.568380+00:00",
+            "timestamp": "2026-09-22T17:14:40.589733+00:00",
             "metadata": {
               "remote_address": "203.0.113.25",
               "wallet_address": "0xWALLET001",
@@ -694,7 +694,7 @@
             "score": 0.95,
             "explanation": "Wallet 0xWALLET001 sent 10.5 ETH to wallet 0xWALLET002 via transaction 0xTX001 (chain: ethereum, timestamp: 2026-09-12T16:00:00Z).  Both from_address and to_address match known wallet evidence records.",
             "rule_id": "WALLET_TRANSACTION_ADDRESS_MATCH",
-            "timestamp": "2026-09-22T16:54:16.568401+00:00",
+            "timestamp": "2026-09-22T17:14:40.589757+00:00",
             "metadata": {
               "tx_hash": "0xTX001",
               "chain": "ethereum",
@@ -720,7 +720,7 @@
             "score": 0.95,
             "explanation": "Wallet 0xWALLET002 sent 10.49 ETH to wallet 0xWALLET003 via transaction 0xTX002 (chain: ethereum, timestamp: 2026-09-12T16:15:00Z).  Both from_address and to_address match known wallet evidence records.",
             "rule_id": "WALLET_TRANSACTION_ADDRESS_MATCH",
-            "timestamp": "2026-09-22T16:54:16.568415+00:00",
+            "timestamp": "2026-09-22T17:14:40.589771+00:00",
             "metadata": {
               "tx_hash": "0xTX002",
               "chain": "ethereum",
@@ -745,7 +745,7 @@
             "score": 0.95,
             "explanation": "Transaction 0xTX003 delivers 5.0 ETH to wallet 0xWALLET003 on ethereum.  The to_address in the transaction record matches this wallet's address exactly.",
             "rule_id": "WALLET_TRANSACTION_ADDRESS_MATCH",
-            "timestamp": "2026-09-22T16:54:16.568428+00:00",
+            "timestamp": "2026-09-22T17:14:40.589784+00:00",
             "metadata": {
               "tx_hash": "0xTX003",
               "chain": "ethereum",
@@ -771,7 +771,7 @@
             "score": 1.0,
             "explanation": "Transaction 0xTX002 terminates at wallet 0xWALLET003, which is in the matched_wallets list for 'Example Exchange' (VASP attribution confidence: 1.00).  Transaction destination is associated with the VASP based on curated attribution evidence.  This does not prove the VASP owns or controls the sending party.",
             "rule_id": "TRANSACTION_VASP_ATTRIBUTION",
-            "timestamp": "2026-09-22T16:54:16.568451+00:00",
+            "timestamp": "2026-09-22T17:14:40.589806+00:00",
             "metadata": {
               "tx_hash": "0xTX002",
               "to_address": "0xWALLET003",
@@ -795,7 +795,7 @@
             "score": 0.55,
             "explanation": "Transaction 0xTX002 terminates at wallet 0xWALLET003, which is in the matched_wallets list for 'Example Custody Services' (VASP attribution confidence: 0.55).  Transaction destination is associated with the VASP based on curated attribution evidence.  This does not prove the VASP owns or controls the sending party.",
             "rule_id": "TRANSACTION_VASP_ATTRIBUTION",
-            "timestamp": "2026-09-22T16:54:16.568464+00:00",
+            "timestamp": "2026-09-22T17:14:40.589818+00:00",
             "metadata": {
               "tx_hash": "0xTX002",
               "to_address": "0xWALLET003",
@@ -819,7 +819,7 @@
             "score": 1.0,
             "explanation": "Transaction 0xTX003 terminates at wallet 0xWALLET003, which is in the matched_wallets list for 'Example Exchange' (VASP attribution confidence: 1.00).  Transaction destination is associated with the VASP based on curated attribution evidence.  This does not prove the VASP owns or controls the sending party.",
             "rule_id": "TRANSACTION_VASP_ATTRIBUTION",
-            "timestamp": "2026-09-22T16:54:16.568477+00:00",
+            "timestamp": "2026-09-22T17:14:40.589830+00:00",
             "metadata": {
               "tx_hash": "0xTX003",
               "to_address": "0xWALLET003",
@@ -843,7 +843,7 @@
             "score": 0.55,
             "explanation": "Transaction 0xTX003 terminates at wallet 0xWALLET003, which is in the matched_wallets list for 'Example Custody Services' (VASP attribution confidence: 0.55).  Transaction destination is associated with the VASP based on curated attribution evidence.  This does not prove the VASP owns or controls the sending party.",
             "rule_id": "TRANSACTION_VASP_ATTRIBUTION",
-            "timestamp": "2026-09-22T16:54:16.568487+00:00",
+            "timestamp": "2026-09-22T17:14:40.589841+00:00",
             "metadata": {
               "tx_hash": "0xTX003",
               "to_address": "0xWALLET003",
@@ -872,7 +872,7 @@
             "score": 0.65,
             "explanation": "Evidence forms a supported primary multi-domain investigation chain spanning: NETWORK \u2194 BLOCKCHAIN \u2192 PROCESS \u2194 NETWORK \u2192 TRANSACTION \u2194 VASP \u2192 WALLET \u2194 TRANSACTION.  The chain is assembled from 5 individual correlation finding(s) across 4 domain pair(s).  Overall chain confidence: 0.65 (weakest-link of individual findings: [0.9, 0.65, 0.95, 0.95, 1.0]).  This finding represents correlated evidence \u2014 it does NOT assert that the process, network endpoint, wallet, or VASP are the same entity or that any party is directly responsible for another's actions.",
             "rule_id": "CROSS_DOMAIN_CHAIN",
-            "timestamp": "2026-09-22T16:54:16.568911+00:00",
+            "timestamp": "2026-09-22T17:14:40.590245+00:00",
             "metadata": {
               "num_findings": 5,
               "domain_types": [
@@ -919,7 +919,7 @@
             "score": 0.55,
             "explanation": "Evidence forms a supported secondary multi-domain investigation chain spanning: NETWORK \u2194 BLOCKCHAIN \u2192 PROCESS \u2194 NETWORK \u2192 TRANSACTION \u2194 VASP \u2192 WALLET \u2194 TRANSACTION.  The chain is assembled from 5 individual correlation finding(s) across 4 domain pair(s).  Overall chain confidence: 0.55 (weakest-link of individual findings: [0.9, 0.65, 0.95, 0.95, 0.55]).  This finding represents correlated evidence \u2014 it does NOT assert that the process, network endpoint, wallet, or VASP are the same entity or that any party is directly responsible for another's actions.",
             "rule_id": "CROSS_DOMAIN_CHAIN",
-            "timestamp": "2026-09-22T16:54:16.568942+00:00",
+            "timestamp": "2026-09-22T17:14:40.590275+00:00",
             "metadata": {
               "num_findings": 5,
               "domain_types": [
@@ -961,7 +961,7 @@
           "overall_confidence": 0.55,
           "rules_applied": 6
         },
-        "generated_at": "2026-09-22T16:54:16.568970+00:00"
+        "generated_at": "2026-09-22T17:14:40.590303+00:00"
       },
       "errors": []
     },
@@ -1472,11 +1472,11 @@
             "relationship_type": "CONNECTS_TO",
             "confidence": 1.0,
             "evidence_ids": [
-              "EVID-NETC-2f6c94f692a6",
-              "EVID-PROC-a1dd51837709"
+              "EVID-PROC-a1dd51837709",
+              "EVID-NETC-2f6c94f692a6"
             ],
             "correlation_id": "CORR-PROCESSN-5856c6bb452d",
-            "timestamp": "2026-09-22T16:54:16.568296+00:00",
+            "timestamp": "2026-09-22T17:14:40.589650+00:00",
             "label": "CONNECTS_TO",
             "metadata": {
               "pid": 4821,
@@ -1499,7 +1499,7 @@
               "EVID-PROC-8887a167c203"
             ],
             "correlation_id": "CORR-PROCESSN-95d9b009cb71",
-            "timestamp": "2026-09-22T16:54:16.568321+00:00",
+            "timestamp": "2026-09-22T17:14:40.589675+00:00",
             "label": "CONNECTS_TO",
             "metadata": {
               "pid": 5102,
@@ -1569,8 +1569,8 @@
             "relationship_type": "SENT_TO",
             "confidence": 1.0,
             "evidence_ids": [
-              "EVID-WLLT-eca23315ae26",
               "EVID-WLLT-b688c6bc1007",
+              "EVID-WLLT-eca23315ae26",
               "EVID-TXID-31040361933c"
             ],
             "correlation_id": "CORR-WALLETTR-35eb97550d6b",
@@ -1630,9 +1630,9 @@
             "relationship_type": "SENT_TO",
             "confidence": 1.0,
             "evidence_ids": [
+              "EVID-TXID-8027690d9240",
               "EVID-WLLT-09686547e96b",
-              "EVID-WLLT-eca23315ae26",
-              "EVID-TXID-8027690d9240"
+              "EVID-WLLT-eca23315ae26"
             ],
             "correlation_id": "CORR-WALLETTR-cb970d15bbb1",
             "timestamp": "2026-09-12T16:15:00Z",
@@ -1765,7 +1765,7 @@
               "EVID-NETC-2f6c94f692a6"
             ],
             "correlation_id": "CORR-NETWORKB-efa1d58dc834",
-            "timestamp": "2026-09-22T16:54:16.568343+00:00",
+            "timestamp": "2026-09-22T17:14:40.589697+00:00",
             "label": "RESOLVES_TO",
             "metadata": {
               "correlation_rule": "NETWORK_DNS_RECORD_MATCH",
@@ -1782,11 +1782,11 @@
             "relationship_type": "RESOLVES_TO",
             "confidence": 0.9,
             "evidence_ids": [
-              "EVID-DNSR-5d35072c24c9",
-              "EVID-NETC-b3b4936a8ec3"
+              "EVID-NETC-b3b4936a8ec3",
+              "EVID-DNSR-5d35072c24c9"
             ],
             "correlation_id": "CORR-NETWORKB-f18baf3d95b4",
-            "timestamp": "2026-09-22T16:54:16.568357+00:00",
+            "timestamp": "2026-09-22T17:14:40.589711+00:00",
             "label": "RESOLVES_TO",
             "metadata": {
               "correlation_rule": "NETWORK_DNS_RECORD_MATCH",
@@ -1807,7 +1807,7 @@
               "EVID-NETC-2f6c94f692a6"
             ],
             "correlation_id": "CORR-NETWORKB-a9e8c984e0ec",
-            "timestamp": "2026-09-22T16:54:16.568380+00:00",
+            "timestamp": "2026-09-22T17:14:40.589733+00:00",
             "label": "ASSOCIATED_WITH",
             "metadata": {
               "correlation_rule": "NETWORK_BLOCKCHAIN_EXPLICIT_MAPPING",
@@ -1826,12 +1826,12 @@
             "relationship_type": "SENT_TO",
             "confidence": 0.95,
             "evidence_ids": [
-              "EVID-WLLT-eca23315ae26",
               "EVID-WLLT-b688c6bc1007",
+              "EVID-WLLT-eca23315ae26",
               "EVID-TXID-31040361933c"
             ],
             "correlation_id": "CORR-WALLETTR-35eb97550d6b",
-            "timestamp": "2026-09-22T16:54:16.568401+00:00",
+            "timestamp": "2026-09-22T17:14:40.589757+00:00",
             "label": "SENT_TO",
             "metadata": {
               "correlation_rule": "WALLET_TRANSACTION_ADDRESS_MATCH",
@@ -1852,12 +1852,12 @@
             "relationship_type": "SENT_TO",
             "confidence": 0.95,
             "evidence_ids": [
+              "EVID-TXID-8027690d9240",
               "EVID-WLLT-09686547e96b",
-              "EVID-WLLT-eca23315ae26",
-              "EVID-TXID-8027690d9240"
+              "EVID-WLLT-eca23315ae26"
             ],
             "correlation_id": "CORR-WALLETTR-cb970d15bbb1",
-            "timestamp": "2026-09-22T16:54:16.568415+00:00",
+            "timestamp": "2026-09-22T17:14:40.589771+00:00",
             "label": "SENT_TO",
             "metadata": {
               "correlation_rule": "WALLET_TRANSACTION_ADDRESS_MATCH",
@@ -1878,11 +1878,11 @@
             "relationship_type": "SENT_TO",
             "confidence": 0.95,
             "evidence_ids": [
-              "EVID-TXID-e791432880de",
-              "EVID-WLLT-09686547e96b"
+              "EVID-WLLT-09686547e96b",
+              "EVID-TXID-e791432880de"
             ],
             "correlation_id": "CORR-WALLETTR-70e995ae1140",
-            "timestamp": "2026-09-22T16:54:16.568428+00:00",
+            "timestamp": "2026-09-22T17:14:40.589784+00:00",
             "label": "SENT_TO",
             "metadata": {
               "correlation_rule": "WALLET_TRANSACTION_ADDRESS_MATCH",
@@ -1904,11 +1904,11 @@
             "relationship_type": "ATTRIBUTED_TO",
             "confidence": 1.0,
             "evidence_ids": [
-              "EVID-TXID-8027690d9240",
-              "EVID-VASP-04971e92f9dc"
+              "EVID-VASP-04971e92f9dc",
+              "EVID-TXID-8027690d9240"
             ],
             "correlation_id": "CORR-TRANSACT-922d209d7fd0",
-            "timestamp": "2026-09-22T16:54:16.568451+00:00",
+            "timestamp": "2026-09-22T17:14:40.589806+00:00",
             "label": "ATTRIBUTED_TO",
             "metadata": {
               "correlation_rule": "TRANSACTION_VASP_ATTRIBUTION",
@@ -1928,11 +1928,11 @@
             "relationship_type": "ATTRIBUTED_TO",
             "confidence": 0.55,
             "evidence_ids": [
-              "EVID-VASP-8d797a6d39f0",
-              "EVID-TXID-8027690d9240"
+              "EVID-TXID-8027690d9240",
+              "EVID-VASP-8d797a6d39f0"
             ],
             "correlation_id": "CORR-TRANSACT-e40a5a478b62",
-            "timestamp": "2026-09-22T16:54:16.568464+00:00",
+            "timestamp": "2026-09-22T17:14:40.589818+00:00",
             "label": "ATTRIBUTED_TO",
             "metadata": {
               "correlation_rule": "TRANSACTION_VASP_ATTRIBUTION",
@@ -1952,11 +1952,11 @@
             "relationship_type": "ATTRIBUTED_TO",
             "confidence": 1.0,
             "evidence_ids": [
-              "EVID-TXID-e791432880de",
-              "EVID-VASP-04971e92f9dc"
+              "EVID-VASP-04971e92f9dc",
+              "EVID-TXID-e791432880de"
             ],
             "correlation_id": "CORR-TRANSACT-6a7dad909f93",
-            "timestamp": "2026-09-22T16:54:16.568477+00:00",
+            "timestamp": "2026-09-22T17:14:40.589830+00:00",
             "label": "ATTRIBUTED_TO",
             "metadata": {
               "correlation_rule": "TRANSACTION_VASP_ATTRIBUTION",
@@ -1976,11 +1976,11 @@
             "relationship_type": "ATTRIBUTED_TO",
             "confidence": 0.55,
             "evidence_ids": [
-              "EVID-VASP-8d797a6d39f0",
-              "EVID-TXID-e791432880de"
+              "EVID-TXID-e791432880de",
+              "EVID-VASP-8d797a6d39f0"
             ],
             "correlation_id": "CORR-TRANSACT-ea2ed8943e5b",
-            "timestamp": "2026-09-22T16:54:16.568487+00:00",
+            "timestamp": "2026-09-22T17:14:40.589841+00:00",
             "label": "ATTRIBUTED_TO",
             "metadata": {
               "correlation_rule": "TRANSACTION_VASP_ATTRIBUTION",
@@ -1994,8 +1994,8 @@
             }
           }
         ],
-        "generated_at": "2026-09-22T16:54:16.574743+00:00",
-        "graph_hash": "932e322fa56612fe9e4f3d0e3565647ec97d40b10002fbdd8e12373f69525ac6",
+        "generated_at": "2026-09-22T17:14:40.595967+00:00",
+        "graph_hash": "61d85df688715a5d7b94a61fb8f78fa64b8faee3845a5e840248a8a8e7aa92b1",
         "metadata": {
           "cross_domain_findings": [
             {
@@ -2017,7 +2017,7 @@
               "score": 0.65,
               "explanation": "Evidence forms a supported primary multi-domain investigation chain spanning: NETWORK \u2194 BLOCKCHAIN \u2192 PROCESS \u2194 NETWORK \u2192 TRANSACTION \u2194 VASP \u2192 WALLET \u2194 TRANSACTION.  The chain is assembled from 5 individual correlation finding(s) across 4 domain pair(s).  Overall chain confidence: 0.65 (weakest-link of individual findings: [0.9, 0.65, 0.95, 0.95, 1.0]).  This finding represents correlated evidence \u2014 it does NOT assert that the process, network endpoint, wallet, or VASP are the same entity or that any party is directly responsible for another's actions.",
               "rule_id": "CROSS_DOMAIN_CHAIN",
-              "timestamp": "2026-09-22T16:54:16.568911+00:00",
+              "timestamp": "2026-09-22T17:14:40.590245+00:00",
               "metadata": {
                 "num_findings": 5,
                 "domain_types": [
@@ -2064,7 +2064,7 @@
               "score": 0.55,
               "explanation": "Evidence forms a supported secondary multi-domain investigation chain spanning: NETWORK \u2194 BLOCKCHAIN \u2192 PROCESS \u2194 NETWORK \u2192 TRANSACTION \u2194 VASP \u2192 WALLET \u2194 TRANSACTION.  The chain is assembled from 5 individual correlation finding(s) across 4 domain pair(s).  Overall chain confidence: 0.55 (weakest-link of individual findings: [0.9, 0.65, 0.95, 0.95, 0.55]).  This finding represents correlated evidence \u2014 it does NOT assert that the process, network endpoint, wallet, or VASP are the same entity or that any party is directly responsible for another's actions.",
               "rule_id": "CROSS_DOMAIN_CHAIN",
-              "timestamp": "2026-09-22T16:54:16.568942+00:00",
+              "timestamp": "2026-09-22T17:14:40.590275+00:00",
               "metadata": {
                 "num_findings": 5,
                 "domain_types": [
@@ -2531,7 +2531,7 @@
             "source": "network",
             "metadata": {
               "evidence_type": "NETWORK_LISTENER",
-              "collection_time": "2026-09-22T16:54:16.563950+00:00",
+              "collection_time": "2026-09-22T17:14:40.585265+00:00",
               "collector": "network"
             }
           },
@@ -2550,7 +2550,7 @@
             "source": "network",
             "metadata": {
               "evidence_type": "NETWORK_LISTENER",
-              "collection_time": "2026-09-22T16:54:16.563950+00:00",
+              "collection_time": "2026-09-22T17:14:40.585265+00:00",
               "collector": "network"
             }
           },
@@ -2594,7 +2594,7 @@
             "source": "blockchain",
             "metadata": {
               "evidence_type": "VASP",
-              "collection_time": "2026-09-22T16:54:16.578465+00:00",
+              "collection_time": "2026-09-22T17:14:40.599593+00:00",
               "collector": "blockchain"
             }
           },
@@ -2619,7 +2619,7 @@
             "source": "blockchain",
             "metadata": {
               "evidence_type": "VASP",
-              "collection_time": "2026-09-22T16:54:16.578510+00:00",
+              "collection_time": "2026-09-22T17:14:40.599639+00:00",
               "collector": "blockchain"
             }
           },
@@ -2710,8 +2710,8 @@
             }
           }
         ],
-        "generated_at": "2026-09-22T16:54:16.579760+00:00",
-        "timeline_hash": "dee2f4020a54633e13bf1964f9d30a6f6172b4737dfe4a6a3dfe2b38841db5b3",
+        "generated_at": "2026-09-22T17:14:40.600847+00:00",
+        "timeline_hash": "f3f709eec9d5023487ff2e25dbd62cb81617633823e87f247de4257a1e2dd764",
         "summary": {
           "total_events": 25,
           "timed_events": 15,
@@ -2737,11 +2737,11 @@
     {
       "operation": "ATTACH_EVIDENCE",
       "status": "SUCCESS",
-      "message": "EvidencePackage attached to case 'JOCKY-FINAL-2026' (hash: 48e9e6de18a912b33958de87d68f92ddec6a4496b6a6d84d2704cea6d826e87d).",
+      "message": "EvidencePackage attached to case 'JOCKY-FINAL-2026' (hash: 632c9b9c7c63e6e57fed499ed858294b36f3faee9c1bb889d1fc65569a181b30).",
       "data": {
         "case_id": "JOCKY-FINAL-2026",
         "host": "LAB-PC-01",
-        "package_hash": "48e9e6de18a912b33958de87d68f92ddec6a4496b6a6d84d2704cea6d826e87d",
+        "package_hash": "632c9b9c7c63e6e57fed499ed858294b36f3faee9c1bb889d1fc65569a181b30",
         "evidence_count": 23,
         "relationship_count": 14,
         "correlation_count": 14
@@ -2965,7 +2965,7 @@
           }
         ],
         "evidence_count": 23,
-        "generated_at": "2026-09-22T16:54:16.586103+00:00",
+        "generated_at": "2026-09-22T17:14:40.607357+00:00",
         "risk_hash": "bcdfc798f85fdd764dc2cd9417971253c30328ca62dbefbe1ed9075ac9e984c1",
         "metadata": {
           "raw_score": 145,
@@ -2979,18 +2979,18 @@
     {
       "operation": "ANCHOR_EVIDENCE",
       "status": "SUCCESS",
-      "message": "Evidence package 55dabb7c anchored to IPFS (bafkkxnl...) and EVM (0x111e46...).",
+      "message": "Evidence package e8566221 anchored to IPFS (bafk5blg...) and EVM (0x5b8c99...).",
       "data": {
-        "package_hash": "55dabb7cf7544c0e358a1751c899759d3288b846057fc3df84bb0c0ff9d7c29d",
-        "ipfs_cid": "bafkkxnlw7hxkrga4nmkc5i4rglvtuzirocgav74hx4exmga76oxykoq",
+        "package_hash": "e8566221f66135973e78d2c079971d3149b9a3b9e0d247d169e6f6243754c90c",
+        "ipfs_cid": "bafk5blgeipwme2zopty2lahtfy5gfe3ti5z4djepulj433cin2uzega",
         "chain_id": 31337,
-        "tx_hash": "0x111e46a7bc12badd19a86769927c7a750be3f2833bdee531a3a16b04f1d6533e",
+        "tx_hash": "0x5b8c99afa09f8c51800b450c405727105035e13b6ed7526f456e2fceefefdcc0",
         "block_number": 1000001,
         "contract_address": "0x100000000000000000000000000000000000J0C1",
-        "anchored_at": "2026-09-22T16:54:16.591385+00:00",
+        "anchored_at": "2026-09-22T17:14:40.612589+00:00",
         "metadata": {
-          "graph_hash": "932e322fa56612fe9e4f3d0e3565647ec97d40b10002fbdd8e12373f69525ac6",
-          "timeline_hash": "dee2f4020a54633e13bf1964f9d30a6f6172b4737dfe4a6a3dfe2b38841db5b3",
+          "graph_hash": "61d85df688715a5d7b94a61fb8f78fa64b8faee3845a5e840248a8a8e7aa92b1",
+          "timeline_hash": "f3f709eec9d5023487ff2e25dbd62cb81617633823e87f247de4257a1e2dd764",
           "risk_hash": "bcdfc798f85fdd764dc2cd9417971253c30328ca62dbefbe1ed9075ac9e984c1"
         }
       },
@@ -3005,10 +3005,10 @@
         "package_hash_match": true,
         "ipfs_match": true,
         "evm_match": true,
-        "expected_package_hash": "55dabb7cf7544c0e358a1751c899759d3288b846057fc3df84bb0c0ff9d7c29d",
-        "actual_package_hash": "55dabb7cf7544c0e358a1751c899759d3288b846057fc3df84bb0c0ff9d7c29d",
+        "expected_package_hash": "e8566221f66135973e78d2c079971d3149b9a3b9e0d247d169e6f6243754c90c",
+        "actual_package_hash": "e8566221f66135973e78d2c079971d3149b9a3b9e0d247d169e6f6243754c90c",
         "details": {
-          "evm_tx_hash": "0x111e46a7bc12badd19a86769927c7a750be3f2833bdee531a3a16b04f1d6533e"
+          "evm_tx_hash": "0x5b8c99afa09f8c51800b450c405727105035e13b6ed7526f456e2fceefefdcc0"
         },
         "errors": []
       },
@@ -3115,7 +3115,7 @@
             "covered_observables": 2
           }
         },
-        "generated_at": "2026-09-22T16:54:16+00:00",
+        "generated_at": "2026-09-22T17:14:40+00:00",
         "result_hash": "ba2667a7d87a49ce74c435425382fb64c199a9d3d8e64967f587b5059d9bfa65"
       },
       "errors": []
@@ -3197,7 +3197,7 @@
             "covered_observables": 1
           }
         },
-        "generated_at": "2026-09-22T16:54:16+00:00",
+        "generated_at": "2026-09-22T17:14:40+00:00",
         "result_hash": "c855ad27be0d70a221d7097faacc6f46f4e606b2f0c0aad0181b801e99d2040c"
       },
       "errors": []
@@ -3280,7 +3280,7 @@
             "covered_observables": 1
           }
         },
-        "generated_at": "2026-09-22T16:54:16+00:00",
+        "generated_at": "2026-09-22T17:14:40+00:00",
         "result_hash": "6b95eeca74ec02468c749bbb15676ad321bac3d3c75d81562b8bb2404d8d34f4"
       },
       "errors": []
@@ -3375,7 +3375,7 @@
             "covered_observables": 2
           }
         },
-        "generated_at": "2026-09-22T16:54:16+00:00",
+        "generated_at": "2026-09-22T17:14:40+00:00",
         "result_hash": "67464729625c95db7a8c9959cbca9d70566a7707ddaca27a0fdf1cbce0b54ad8"
       },
       "errors": []
@@ -3459,7 +3459,7 @@
             "covered_observables": 1
           }
         },
-        "generated_at": "2026-09-22T16:54:16+00:00",
+        "generated_at": "2026-09-22T17:14:40+00:00",
         "result_hash": "5c29b74f06f104e544f752e9ae3acc90a5486ae617fe218970076c436ba71481"
       },
       "errors": []
@@ -4355,11 +4355,11 @@
         "relationship_type": "CONNECTS_TO",
         "confidence": 1.0,
         "evidence_ids": [
-          "EVID-NETC-2f6c94f692a6",
-          "EVID-PROC-a1dd51837709"
+          "EVID-PROC-a1dd51837709",
+          "EVID-NETC-2f6c94f692a6"
         ],
         "correlation_id": "CORR-PROCESSN-5856c6bb452d",
-        "timestamp": "2026-09-22T16:54:16.568296+00:00",
+        "timestamp": "2026-09-22T17:14:40.589650+00:00",
         "label": "CONNECTS_TO",
         "metadata": {
           "pid": 4821,
@@ -4382,7 +4382,7 @@
           "EVID-PROC-8887a167c203"
         ],
         "correlation_id": "CORR-PROCESSN-95d9b009cb71",
-        "timestamp": "2026-09-22T16:54:16.568321+00:00",
+        "timestamp": "2026-09-22T17:14:40.589675+00:00",
         "label": "CONNECTS_TO",
         "metadata": {
           "pid": 5102,
@@ -4452,8 +4452,8 @@
         "relationship_type": "SENT_TO",
         "confidence": 1.0,
         "evidence_ids": [
-          "EVID-WLLT-eca23315ae26",
           "EVID-WLLT-b688c6bc1007",
+          "EVID-WLLT-eca23315ae26",
           "EVID-TXID-31040361933c"
         ],
         "correlation_id": "CORR-WALLETTR-35eb97550d6b",
@@ -4513,9 +4513,9 @@
         "relationship_type": "SENT_TO",
         "confidence": 1.0,
         "evidence_ids": [
+          "EVID-TXID-8027690d9240",
           "EVID-WLLT-09686547e96b",
-          "EVID-WLLT-eca23315ae26",
-          "EVID-TXID-8027690d9240"
+          "EVID-WLLT-eca23315ae26"
         ],
         "correlation_id": "CORR-WALLETTR-cb970d15bbb1",
         "timestamp": "2026-09-12T16:15:00Z",
@@ -4648,7 +4648,7 @@
           "EVID-NETC-2f6c94f692a6"
         ],
         "correlation_id": "CORR-NETWORKB-efa1d58dc834",
-        "timestamp": "2026-09-22T16:54:16.568343+00:00",
+        "timestamp": "2026-09-22T17:14:40.589697+00:00",
         "label": "RESOLVES_TO",
         "metadata": {
           "correlation_rule": "NETWORK_DNS_RECORD_MATCH",
@@ -4665,11 +4665,11 @@
         "relationship_type": "RESOLVES_TO",
         "confidence": 0.9,
         "evidence_ids": [
-          "EVID-DNSR-5d35072c24c9",
-          "EVID-NETC-b3b4936a8ec3"
+          "EVID-NETC-b3b4936a8ec3",
+          "EVID-DNSR-5d35072c24c9"
         ],
         "correlation_id": "CORR-NETWORKB-f18baf3d95b4",
-        "timestamp": "2026-09-22T16:54:16.568357+00:00",
+        "timestamp": "2026-09-22T17:14:40.589711+00:00",
         "label": "RESOLVES_TO",
         "metadata": {
           "correlation_rule": "NETWORK_DNS_RECORD_MATCH",
@@ -4690,7 +4690,7 @@
           "EVID-NETC-2f6c94f692a6"
         ],
         "correlation_id": "CORR-NETWORKB-a9e8c984e0ec",
-        "timestamp": "2026-09-22T16:54:16.568380+00:00",
+        "timestamp": "2026-09-22T17:14:40.589733+00:00",
         "label": "ASSOCIATED_WITH",
         "metadata": {
           "correlation_rule": "NETWORK_BLOCKCHAIN_EXPLICIT_MAPPING",
@@ -4709,12 +4709,12 @@
         "relationship_type": "SENT_TO",
         "confidence": 0.95,
         "evidence_ids": [
-          "EVID-WLLT-eca23315ae26",
           "EVID-WLLT-b688c6bc1007",
+          "EVID-WLLT-eca23315ae26",
           "EVID-TXID-31040361933c"
         ],
         "correlation_id": "CORR-WALLETTR-35eb97550d6b",
-        "timestamp": "2026-09-22T16:54:16.568401+00:00",
+        "timestamp": "2026-09-22T17:14:40.589757+00:00",
         "label": "SENT_TO",
         "metadata": {
           "correlation_rule": "WALLET_TRANSACTION_ADDRESS_MATCH",
@@ -4735,12 +4735,12 @@
         "relationship_type": "SENT_TO",
         "confidence": 0.95,
         "evidence_ids": [
+          "EVID-TXID-8027690d9240",
           "EVID-WLLT-09686547e96b",
-          "EVID-WLLT-eca23315ae26",
-          "EVID-TXID-8027690d9240"
+          "EVID-WLLT-eca23315ae26"
         ],
         "correlation_id": "CORR-WALLETTR-cb970d15bbb1",
-        "timestamp": "2026-09-22T16:54:16.568415+00:00",
+        "timestamp": "2026-09-22T17:14:40.589771+00:00",
         "label": "SENT_TO",
         "metadata": {
           "correlation_rule": "WALLET_TRANSACTION_ADDRESS_MATCH",
@@ -4761,11 +4761,11 @@
         "relationship_type": "SENT_TO",
         "confidence": 0.95,
         "evidence_ids": [
-          "EVID-TXID-e791432880de",
-          "EVID-WLLT-09686547e96b"
+          "EVID-WLLT-09686547e96b",
+          "EVID-TXID-e791432880de"
         ],
         "correlation_id": "CORR-WALLETTR-70e995ae1140",
-        "timestamp": "2026-09-22T16:54:16.568428+00:00",
+        "timestamp": "2026-09-22T17:14:40.589784+00:00",
         "label": "SENT_TO",
         "metadata": {
           "correlation_rule": "WALLET_TRANSACTION_ADDRESS_MATCH",
@@ -4787,11 +4787,11 @@
         "relationship_type": "ATTRIBUTED_TO",
         "confidence": 1.0,
         "evidence_ids": [
-          "EVID-TXID-8027690d9240",
-          "EVID-VASP-04971e92f9dc"
+          "EVID-VASP-04971e92f9dc",
+          "EVID-TXID-8027690d9240"
         ],
         "correlation_id": "CORR-TRANSACT-922d209d7fd0",
-        "timestamp": "2026-09-22T16:54:16.568451+00:00",
+        "timestamp": "2026-09-22T17:14:40.589806+00:00",
         "label": "ATTRIBUTED_TO",
         "metadata": {
           "correlation_rule": "TRANSACTION_VASP_ATTRIBUTION",
@@ -4811,11 +4811,11 @@
         "relationship_type": "ATTRIBUTED_TO",
         "confidence": 0.55,
         "evidence_ids": [
-          "EVID-VASP-8d797a6d39f0",
-          "EVID-TXID-8027690d9240"
+          "EVID-TXID-8027690d9240",
+          "EVID-VASP-8d797a6d39f0"
         ],
         "correlation_id": "CORR-TRANSACT-e40a5a478b62",
-        "timestamp": "2026-09-22T16:54:16.568464+00:00",
+        "timestamp": "2026-09-22T17:14:40.589818+00:00",
         "label": "ATTRIBUTED_TO",
         "metadata": {
           "correlation_rule": "TRANSACTION_VASP_ATTRIBUTION",
@@ -4835,11 +4835,11 @@
         "relationship_type": "ATTRIBUTED_TO",
         "confidence": 1.0,
         "evidence_ids": [
-          "EVID-TXID-e791432880de",
-          "EVID-VASP-04971e92f9dc"
+          "EVID-VASP-04971e92f9dc",
+          "EVID-TXID-e791432880de"
         ],
         "correlation_id": "CORR-TRANSACT-6a7dad909f93",
-        "timestamp": "2026-09-22T16:54:16.568477+00:00",
+        "timestamp": "2026-09-22T17:14:40.589830+00:00",
         "label": "ATTRIBUTED_TO",
         "metadata": {
           "correlation_rule": "TRANSACTION_VASP_ATTRIBUTION",
@@ -4859,11 +4859,11 @@
         "relationship_type": "ATTRIBUTED_TO",
         "confidence": 0.55,
         "evidence_ids": [
-          "EVID-VASP-8d797a6d39f0",
-          "EVID-TXID-e791432880de"
+          "EVID-TXID-e791432880de",
+          "EVID-VASP-8d797a6d39f0"
         ],
         "correlation_id": "CORR-TRANSACT-ea2ed8943e5b",
-        "timestamp": "2026-09-22T16:54:16.568487+00:00",
+        "timestamp": "2026-09-22T17:14:40.589841+00:00",
         "label": "ATTRIBUTED_TO",
         "metadata": {
           "correlation_rule": "TRANSACTION_VASP_ATTRIBUTION",
@@ -4877,8 +4877,8 @@
         }
       }
     ],
-    "generated_at": "2026-09-22T16:54:16.574743+00:00",
-    "graph_hash": "932e322fa56612fe9e4f3d0e3565647ec97d40b10002fbdd8e12373f69525ac6",
+    "generated_at": "2026-09-22T17:14:40.595967+00:00",
+    "graph_hash": "61d85df688715a5d7b94a61fb8f78fa64b8faee3845a5e840248a8a8e7aa92b1",
     "metadata": {
       "cross_domain_findings": [
         {
@@ -4900,7 +4900,7 @@
           "score": 0.65,
           "explanation": "Evidence forms a supported primary multi-domain investigation chain spanning: NETWORK \u2194 BLOCKCHAIN \u2192 PROCESS \u2194 NETWORK \u2192 TRANSACTION \u2194 VASP \u2192 WALLET \u2194 TRANSACTION.  The chain is assembled from 5 individual correlation finding(s) across 4 domain pair(s).  Overall chain confidence: 0.65 (weakest-link of individual findings: [0.9, 0.65, 0.95, 0.95, 1.0]).  This finding represents correlated evidence \u2014 it does NOT assert that the process, network endpoint, wallet, or VASP are the same entity or that any party is directly responsible for another's actions.",
           "rule_id": "CROSS_DOMAIN_CHAIN",
-          "timestamp": "2026-09-22T16:54:16.568911+00:00",
+          "timestamp": "2026-09-22T17:14:40.590245+00:00",
           "metadata": {
             "num_findings": 5,
             "domain_types": [
@@ -4947,7 +4947,7 @@
           "score": 0.55,
           "explanation": "Evidence forms a supported secondary multi-domain investigation chain spanning: NETWORK \u2194 BLOCKCHAIN \u2192 PROCESS \u2194 NETWORK \u2192 TRANSACTION \u2194 VASP \u2192 WALLET \u2194 TRANSACTION.  The chain is assembled from 5 individual correlation finding(s) across 4 domain pair(s).  Overall chain confidence: 0.55 (weakest-link of individual findings: [0.9, 0.65, 0.95, 0.95, 0.55]).  This finding represents correlated evidence \u2014 it does NOT assert that the process, network endpoint, wallet, or VASP are the same entity or that any party is directly responsible for another's actions.",
           "rule_id": "CROSS_DOMAIN_CHAIN",
-          "timestamp": "2026-09-22T16:54:16.568942+00:00",
+          "timestamp": "2026-09-22T17:14:40.590275+00:00",
           "metadata": {
             "num_findings": 5,
             "domain_types": [
@@ -5493,11 +5493,11 @@
         "relationship_type": "CONNECTS_TO",
         "confidence": 1.0,
         "evidence_ids": [
-          "EVID-NETC-2f6c94f692a6",
-          "EVID-PROC-a1dd51837709"
+          "EVID-PROC-a1dd51837709",
+          "EVID-NETC-2f6c94f692a6"
         ],
         "correlation_id": "CORR-PROCESSN-5856c6bb452d",
-        "timestamp": "2026-09-22T16:54:16.568296+00:00",
+        "timestamp": "2026-09-22T17:14:40.589650+00:00",
         "label": "CONNECTS_TO",
         "metadata": {
           "pid": 4821,
@@ -5520,7 +5520,7 @@
           "EVID-PROC-8887a167c203"
         ],
         "correlation_id": "CORR-PROCESSN-95d9b009cb71",
-        "timestamp": "2026-09-22T16:54:16.568321+00:00",
+        "timestamp": "2026-09-22T17:14:40.589675+00:00",
         "label": "CONNECTS_TO",
         "metadata": {
           "pid": 5102,
@@ -5590,8 +5590,8 @@
         "relationship_type": "SENT_TO",
         "confidence": 1.0,
         "evidence_ids": [
-          "EVID-WLLT-eca23315ae26",
           "EVID-WLLT-b688c6bc1007",
+          "EVID-WLLT-eca23315ae26",
           "EVID-TXID-31040361933c"
         ],
         "correlation_id": "CORR-WALLETTR-35eb97550d6b",
@@ -5651,9 +5651,9 @@
         "relationship_type": "SENT_TO",
         "confidence": 1.0,
         "evidence_ids": [
+          "EVID-TXID-8027690d9240",
           "EVID-WLLT-09686547e96b",
-          "EVID-WLLT-eca23315ae26",
-          "EVID-TXID-8027690d9240"
+          "EVID-WLLT-eca23315ae26"
         ],
         "correlation_id": "CORR-WALLETTR-cb970d15bbb1",
         "timestamp": "2026-09-12T16:15:00Z",
@@ -5786,7 +5786,7 @@
           "EVID-NETC-2f6c94f692a6"
         ],
         "correlation_id": "CORR-NETWORKB-efa1d58dc834",
-        "timestamp": "2026-09-22T16:54:16.568343+00:00",
+        "timestamp": "2026-09-22T17:14:40.589697+00:00",
         "label": "RESOLVES_TO",
         "metadata": {
           "correlation_rule": "NETWORK_DNS_RECORD_MATCH",
@@ -5803,11 +5803,11 @@
         "relationship_type": "RESOLVES_TO",
         "confidence": 0.9,
         "evidence_ids": [
-          "EVID-DNSR-5d35072c24c9",
-          "EVID-NETC-b3b4936a8ec3"
+          "EVID-NETC-b3b4936a8ec3",
+          "EVID-DNSR-5d35072c24c9"
         ],
         "correlation_id": "CORR-NETWORKB-f18baf3d95b4",
-        "timestamp": "2026-09-22T16:54:16.568357+00:00",
+        "timestamp": "2026-09-22T17:14:40.589711+00:00",
         "label": "RESOLVES_TO",
         "metadata": {
           "correlation_rule": "NETWORK_DNS_RECORD_MATCH",
@@ -5828,7 +5828,7 @@
           "EVID-NETC-2f6c94f692a6"
         ],
         "correlation_id": "CORR-NETWORKB-a9e8c984e0ec",
-        "timestamp": "2026-09-22T16:54:16.568380+00:00",
+        "timestamp": "2026-09-22T17:14:40.589733+00:00",
         "label": "ASSOCIATED_WITH",
         "metadata": {
           "correlation_rule": "NETWORK_BLOCKCHAIN_EXPLICIT_MAPPING",
@@ -5847,12 +5847,12 @@
         "relationship_type": "SENT_TO",
         "confidence": 0.95,
         "evidence_ids": [
-          "EVID-WLLT-eca23315ae26",
           "EVID-WLLT-b688c6bc1007",
+          "EVID-WLLT-eca23315ae26",
           "EVID-TXID-31040361933c"
         ],
         "correlation_id": "CORR-WALLETTR-35eb97550d6b",
-        "timestamp": "2026-09-22T16:54:16.568401+00:00",
+        "timestamp": "2026-09-22T17:14:40.589757+00:00",
         "label": "SENT_TO",
         "metadata": {
           "correlation_rule": "WALLET_TRANSACTION_ADDRESS_MATCH",
@@ -5873,12 +5873,12 @@
         "relationship_type": "SENT_TO",
         "confidence": 0.95,
         "evidence_ids": [
+          "EVID-TXID-8027690d9240",
           "EVID-WLLT-09686547e96b",
-          "EVID-WLLT-eca23315ae26",
-          "EVID-TXID-8027690d9240"
+          "EVID-WLLT-eca23315ae26"
         ],
         "correlation_id": "CORR-WALLETTR-cb970d15bbb1",
-        "timestamp": "2026-09-22T16:54:16.568415+00:00",
+        "timestamp": "2026-09-22T17:14:40.589771+00:00",
         "label": "SENT_TO",
         "metadata": {
           "correlation_rule": "WALLET_TRANSACTION_ADDRESS_MATCH",
@@ -5899,11 +5899,11 @@
         "relationship_type": "SENT_TO",
         "confidence": 0.95,
         "evidence_ids": [
-          "EVID-TXID-e791432880de",
-          "EVID-WLLT-09686547e96b"
+          "EVID-WLLT-09686547e96b",
+          "EVID-TXID-e791432880de"
         ],
         "correlation_id": "CORR-WALLETTR-70e995ae1140",
-        "timestamp": "2026-09-22T16:54:16.568428+00:00",
+        "timestamp": "2026-09-22T17:14:40.589784+00:00",
         "label": "SENT_TO",
         "metadata": {
           "correlation_rule": "WALLET_TRANSACTION_ADDRESS_MATCH",
@@ -5925,11 +5925,11 @@
         "relationship_type": "ATTRIBUTED_TO",
         "confidence": 1.0,
         "evidence_ids": [
-          "EVID-TXID-8027690d9240",
-          "EVID-VASP-04971e92f9dc"
+          "EVID-VASP-04971e92f9dc",
+          "EVID-TXID-8027690d9240"
         ],
         "correlation_id": "CORR-TRANSACT-922d209d7fd0",
-        "timestamp": "2026-09-22T16:54:16.568451+00:00",
+        "timestamp": "2026-09-22T17:14:40.589806+00:00",
         "label": "ATTRIBUTED_TO",
         "metadata": {
           "correlation_rule": "TRANSACTION_VASP_ATTRIBUTION",
@@ -5949,11 +5949,11 @@
         "relationship_type": "ATTRIBUTED_TO",
         "confidence": 0.55,
         "evidence_ids": [
-          "EVID-VASP-8d797a6d39f0",
-          "EVID-TXID-8027690d9240"
+          "EVID-TXID-8027690d9240",
+          "EVID-VASP-8d797a6d39f0"
         ],
         "correlation_id": "CORR-TRANSACT-e40a5a478b62",
-        "timestamp": "2026-09-22T16:54:16.568464+00:00",
+        "timestamp": "2026-09-22T17:14:40.589818+00:00",
         "label": "ATTRIBUTED_TO",
         "metadata": {
           "correlation_rule": "TRANSACTION_VASP_ATTRIBUTION",
@@ -5973,11 +5973,11 @@
         "relationship_type": "ATTRIBUTED_TO",
         "confidence": 1.0,
         "evidence_ids": [
-          "EVID-TXID-e791432880de",
-          "EVID-VASP-04971e92f9dc"
+          "EVID-VASP-04971e92f9dc",
+          "EVID-TXID-e791432880de"
         ],
         "correlation_id": "CORR-TRANSACT-6a7dad909f93",
-        "timestamp": "2026-09-22T16:54:16.568477+00:00",
+        "timestamp": "2026-09-22T17:14:40.589830+00:00",
         "label": "ATTRIBUTED_TO",
         "metadata": {
           "correlation_rule": "TRANSACTION_VASP_ATTRIBUTION",
@@ -5997,11 +5997,11 @@
         "relationship_type": "ATTRIBUTED_TO",
         "confidence": 0.55,
         "evidence_ids": [
-          "EVID-VASP-8d797a6d39f0",
-          "EVID-TXID-e791432880de"
+          "EVID-TXID-e791432880de",
+          "EVID-VASP-8d797a6d39f0"
         ],
         "correlation_id": "CORR-TRANSACT-ea2ed8943e5b",
-        "timestamp": "2026-09-22T16:54:16.568487+00:00",
+        "timestamp": "2026-09-22T17:14:40.589841+00:00",
         "label": "ATTRIBUTED_TO",
         "metadata": {
           "correlation_rule": "TRANSACTION_VASP_ATTRIBUTION",
@@ -6015,8 +6015,8 @@
         }
       }
     ],
-    "generated_at": "2026-09-22T16:54:16.574743+00:00",
-    "graph_hash": "932e322fa56612fe9e4f3d0e3565647ec97d40b10002fbdd8e12373f69525ac6",
+    "generated_at": "2026-09-22T17:14:40.595967+00:00",
+    "graph_hash": "61d85df688715a5d7b94a61fb8f78fa64b8faee3845a5e840248a8a8e7aa92b1",
     "metadata": {
       "cross_domain_findings": [
         {
@@ -6038,7 +6038,7 @@
           "score": 0.65,
           "explanation": "Evidence forms a supported primary multi-domain investigation chain spanning: NETWORK \u2194 BLOCKCHAIN \u2192 PROCESS \u2194 NETWORK \u2192 TRANSACTION \u2194 VASP \u2192 WALLET \u2194 TRANSACTION.  The chain is assembled from 5 individual correlation finding(s) across 4 domain pair(s).  Overall chain confidence: 0.65 (weakest-link of individual findings: [0.9, 0.65, 0.95, 0.95, 1.0]).  This finding represents correlated evidence \u2014 it does NOT assert that the process, network endpoint, wallet, or VASP are the same entity or that any party is directly responsible for another's actions.",
           "rule_id": "CROSS_DOMAIN_CHAIN",
-          "timestamp": "2026-09-22T16:54:16.568911+00:00",
+          "timestamp": "2026-09-22T17:14:40.590245+00:00",
           "metadata": {
             "num_findings": 5,
             "domain_types": [
@@ -6085,7 +6085,7 @@
           "score": 0.55,
           "explanation": "Evidence forms a supported secondary multi-domain investigation chain spanning: NETWORK \u2194 BLOCKCHAIN \u2192 PROCESS \u2194 NETWORK \u2192 TRANSACTION \u2194 VASP \u2192 WALLET \u2194 TRANSACTION.  The chain is assembled from 5 individual correlation finding(s) across 4 domain pair(s).  Overall chain confidence: 0.55 (weakest-link of individual findings: [0.9, 0.65, 0.95, 0.95, 0.55]).  This finding represents correlated evidence \u2014 it does NOT assert that the process, network endpoint, wallet, or VASP are the same entity or that any party is directly responsible for another's actions.",
           "rule_id": "CROSS_DOMAIN_CHAIN",
-          "timestamp": "2026-09-22T16:54:16.568942+00:00",
+          "timestamp": "2026-09-22T17:14:40.590275+00:00",
           "metadata": {
             "num_findings": 5,
             "domain_types": [
@@ -6546,7 +6546,7 @@
         "source": "network",
         "metadata": {
           "evidence_type": "NETWORK_LISTENER",
-          "collection_time": "2026-09-22T16:54:16.563950+00:00",
+          "collection_time": "2026-09-22T17:14:40.585265+00:00",
           "collector": "network"
         }
       },
@@ -6565,7 +6565,7 @@
         "source": "network",
         "metadata": {
           "evidence_type": "NETWORK_LISTENER",
-          "collection_time": "2026-09-22T16:54:16.563950+00:00",
+          "collection_time": "2026-09-22T17:14:40.585265+00:00",
           "collector": "network"
         }
       },
@@ -6609,7 +6609,7 @@
         "source": "blockchain",
         "metadata": {
           "evidence_type": "VASP",
-          "collection_time": "2026-09-22T16:54:16.578465+00:00",
+          "collection_time": "2026-09-22T17:14:40.599593+00:00",
           "collector": "blockchain"
         }
       },
@@ -6634,7 +6634,7 @@
         "source": "blockchain",
         "metadata": {
           "evidence_type": "VASP",
-          "collection_time": "2026-09-22T16:54:16.578510+00:00",
+          "collection_time": "2026-09-22T17:14:40.599639+00:00",
           "collector": "blockchain"
         }
       },
@@ -6725,8 +6725,8 @@
         }
       }
     ],
-    "generated_at": "2026-09-22T16:54:16.579760+00:00",
-    "timeline_hash": "dee2f4020a54633e13bf1964f9d30a6f6172b4737dfe4a6a3dfe2b38841db5b3",
+    "generated_at": "2026-09-22T17:14:40.600847+00:00",
+    "timeline_hash": "f3f709eec9d5023487ff2e25dbd62cb81617633823e87f247de4257a1e2dd764",
     "summary": {
       "total_events": 25,
       "timed_events": 15,
@@ -6960,7 +6960,7 @@
       }
     ],
     "evidence_count": 23,
-    "generated_at": "2026-09-22T16:54:16.586103+00:00",
+    "generated_at": "2026-09-22T17:14:40.607357+00:00",
     "risk_hash": "bcdfc798f85fdd764dc2cd9417971253c30328ca62dbefbe1ed9075ac9e984c1",
     "metadata": {
       "raw_score": 145,
@@ -6974,7 +6974,7 @@
     "os_version": "22.04",
     "architecture": "x86_64",
     "hostname": "LAB-PC-01",
-    "runtime": "Python 3.11.6",
+    "runtime": "Python 3.12.3 (CPython)",
     "adapter_name": "LinuxPlatformAdapter"
   },
   "security_status": {
@@ -7003,19 +7003,19 @@
       "title": "JOCKY-FINAL-2026",
       "description": "",
       "status": "OPEN",
-      "created_at": "2026-09-22T16:54:16+00:00Z",
-      "updated_at": "2026-09-22T16:54:16+00:00Z",
+      "created_at": "2026-09-22T17:14:40+00:00Z",
+      "updated_at": "2026-09-22T17:14:40+00:00Z",
       "hosts": [
         "HOST-109ef9f14c3c",
         "HOST-6f9c0097050e",
         "HOST-ec7946caa767"
       ],
       "evidence_packages": [
-        "48e9e6de18a912b33958de87d68f92ddec6a4496b6a6d84d2704cea6d826e87d"
+        "632c9b9c7c63e6e57fed499ed858294b36f3faee9c1bb889d1fc65569a181b30"
       ],
       "metadata": {}
     },
-    "case_hash": "4e0752c88072b6f93eb641db744bf86e26b20e5e4ad7d9fa19085c492f595ac5",
+    "case_hash": "0ca49bc4b569aa43ba0d42a854aa6dd9ae2a9953f32842fe0c94df5d3bb9e2a5",
     "summary": {
       "case_id": "JOCKY-FINAL-2026",
       "status": "OPEN",
@@ -7029,7 +7029,7 @@
       "blockchain_finding_count": 6,
       "vasp_finding_count": 2,
       "anchor_record_count": 0,
-      "generated_at": "2026-09-22T16:54:16+00:00Z"
+      "generated_at": "2026-09-22T17:14:40+00:00Z"
     }
   },
   "research_results": [
@@ -7123,7 +7123,7 @@
           "covered_observables": 2
         }
       },
-      "generated_at": "2026-09-22T16:54:16+00:00",
+      "generated_at": "2026-09-22T17:14:40+00:00",
       "result_hash": "ba2667a7d87a49ce74c435425382fb64c199a9d3d8e64967f587b5059d9bfa65"
     },
     {
@@ -7199,7 +7199,7 @@
           "covered_observables": 1
         }
       },
-      "generated_at": "2026-09-22T16:54:16+00:00",
+      "generated_at": "2026-09-22T17:14:40+00:00",
       "result_hash": "c855ad27be0d70a221d7097faacc6f46f4e606b2f0c0aad0181b801e99d2040c"
     },
     {
@@ -7276,7 +7276,7 @@
           "covered_observables": 1
         }
       },
-      "generated_at": "2026-09-22T16:54:16+00:00",
+      "generated_at": "2026-09-22T17:14:40+00:00",
       "result_hash": "6b95eeca74ec02468c749bbb15676ad321bac3d3c75d81562b8bb2404d8d34f4"
     },
     {
@@ -7365,7 +7365,7 @@
           "covered_observables": 2
         }
       },
-      "generated_at": "2026-09-22T16:54:16+00:00",
+      "generated_at": "2026-09-22T17:14:40+00:00",
       "result_hash": "67464729625c95db7a8c9959cbca9d70566a7707ddaca27a0fdf1cbce0b54ad8"
     },
     {
@@ -7443,7 +7443,7 @@
           "covered_observables": 1
         }
       },
-      "generated_at": "2026-09-22T16:54:16+00:00",
+      "generated_at": "2026-09-22T17:14:40+00:00",
       "result_hash": "5c29b74f06f104e544f752e9ae3acc90a5486ae617fe218970076c436ba71481"
     }
   ],
@@ -7801,7 +7801,7 @@
         "id": "EVID-NETL-a02b36ed9f01",
         "type": "NETWORK_LISTENER",
         "source": "network",
-        "timestamp": "2026-09-22T16:54:16.563950+00:00",
+        "timestamp": "2026-09-22T17:14:40.585265+00:00",
         "confidence": 1.0,
         "entity": {
           "type": "NETWORK_LISTENER",
@@ -7822,20 +7822,20 @@
           "adapter": "network",
           "source": "host:LAB-PC-01",
           "collection_method": "psutil.net_connections",
-          "collected_at": "2026-09-22T16:54:16.563950+00:00",
+          "collected_at": "2026-09-22T17:14:40.585265+00:00",
           "host": "LAB-PC-01",
           "case_id": "JOCKY-FINAL-2026"
         },
         "integrity": {
           "algorithm": "SHA-256",
-          "value": "f6e1f277d342131e75e30b2aa37f5b6e99a497766521239d084cd613a32bf64a"
+          "value": "73c7da181b17835521c9ee45fc6e02a0d795c3ac84751087ba926bd519a4b021"
         }
       },
       {
         "id": "EVID-NETL-c10df9bf1f13",
         "type": "NETWORK_LISTENER",
         "source": "network",
-        "timestamp": "2026-09-22T16:54:16.563950+00:00",
+        "timestamp": "2026-09-22T17:14:40.585265+00:00",
         "confidence": 1.0,
         "entity": {
           "type": "NETWORK_LISTENER",
@@ -7855,13 +7855,13 @@
           "adapter": "network",
           "source": "host:LAB-PC-01",
           "collection_method": "psutil.net_connections",
-          "collected_at": "2026-09-22T16:54:16.563950+00:00",
+          "collected_at": "2026-09-22T17:14:40.585265+00:00",
           "host": "LAB-PC-01",
           "case_id": "JOCKY-FINAL-2026"
         },
         "integrity": {
           "algorithm": "SHA-256",
-          "value": "5c208b1753474eb65199378595b8080b4d509b6f4ae7429daded3c7c24c1d5b5"
+          "value": "8739a2d389ed4d8c18dfc6eb43ebc49022acb107916a5ed320a01a5b069c99e9"
         }
       },
       {
@@ -8171,7 +8171,7 @@
         "id": "EVID-VASP-04971e92f9dc",
         "type": "VASP",
         "source": "blockchain",
-        "timestamp": "2026-09-22T16:54:16.580746+00:00",
+        "timestamp": "2026-09-22T17:14:40.601798+00:00",
         "confidence": 1.0,
         "entity": {
           "type": "VASP",
@@ -8209,20 +8209,20 @@
           "adapter": "blockchain",
           "source": "vasp_intelligence",
           "collection_method": "analytical_scoring",
-          "collected_at": "2026-09-22T16:54:16.580746+00:00",
+          "collected_at": "2026-09-22T17:14:40.601798+00:00",
           "host": "LAB-PC-01",
           "case_id": "JOCKY-FINAL-2026"
         },
         "integrity": {
           "algorithm": "SHA-256",
-          "value": "1beda3fdf8dc45a65ac40a202d29ee7bfb77df01a1b2a0765a74317426ebf53e"
+          "value": "bddb911759090aa43b69c76df58ebd3d0a6683990b89ded3ec05f0f55eb78b9b"
         }
       },
       {
         "id": "EVID-VASP-8d797a6d39f0",
         "type": "VASP",
         "source": "blockchain",
-        "timestamp": "2026-09-22T16:54:16.580791+00:00",
+        "timestamp": "2026-09-22T17:14:40.601840+00:00",
         "confidence": 0.55,
         "entity": {
           "type": "VASP",
@@ -8255,13 +8255,13 @@
           "adapter": "blockchain",
           "source": "vasp_intelligence",
           "collection_method": "analytical_scoring",
-          "collected_at": "2026-09-22T16:54:16.580791+00:00",
+          "collected_at": "2026-09-22T17:14:40.601840+00:00",
           "host": "LAB-PC-01",
           "case_id": "JOCKY-FINAL-2026"
         },
         "integrity": {
           "algorithm": "SHA-256",
-          "value": "29eb628a8eb239aec42a874cd321ebfb396480a79605d6d8f5dbd1bb82d72b47"
+          "value": "ba5f11ca83506ea863d3235427d927f28ac74d80cb32bd65195d6ad887f4ecc4"
         }
       }
     ],
@@ -8527,7 +8527,7 @@
         "score": 0.95,
         "explanation": "Process 'suspicious_miner' (PID 4821) and network connection to 203.0.113.25:443 share PID 4821.  This is a direct PID observation \u2014 both evidence records identify the same process ID.",
         "rule_id": "PROCESS_NETWORK_PID_MATCH",
-        "timestamp": "2026-09-22T16:54:16.568296+00:00",
+        "timestamp": "2026-09-22T17:14:40.589650+00:00",
         "metadata": {
           "pid": 4821,
           "process_name": "suspicious_miner",
@@ -8549,7 +8549,7 @@
         "score": 0.95,
         "explanation": "Process 'c2_client' (PID 5102) and network connection to 198.51.100.20:443 share PID 5102.  This is a direct PID observation \u2014 both evidence records identify the same process ID.",
         "rule_id": "PROCESS_NETWORK_PID_MATCH",
-        "timestamp": "2026-09-22T16:54:16.568321+00:00",
+        "timestamp": "2026-09-22T17:14:40.589675+00:00",
         "metadata": {
           "pid": 5102,
           "process_name": "c2_client",
@@ -8571,7 +8571,7 @@
         "score": 0.9,
         "explanation": "Network connection to 203.0.113.25 is correlated with DNS record for 'mining-pool.internal', which resolves to 203.0.113.25.  The IP address appears explicitly in the DNS record's address list.",
         "rule_id": "NETWORK_DNS_RECORD_MATCH",
-        "timestamp": "2026-09-22T16:54:16.568343+00:00",
+        "timestamp": "2026-09-22T17:14:40.589697+00:00",
         "metadata": {
           "remote_address": "203.0.113.25",
           "domain": "mining-pool.internal",
@@ -8592,7 +8592,7 @@
         "score": 0.9,
         "explanation": "Network connection to 198.51.100.20 is correlated with DNS record for 'c2-gate.internal', which resolves to 198.51.100.20.  The IP address appears explicitly in the DNS record's address list.",
         "rule_id": "NETWORK_DNS_RECORD_MATCH",
-        "timestamp": "2026-09-22T16:54:16.568357+00:00",
+        "timestamp": "2026-09-22T17:14:40.589711+00:00",
         "metadata": {
           "remote_address": "198.51.100.20",
           "domain": "c2-gate.internal",
@@ -8613,7 +8613,7 @@
         "score": 0.65,
         "explanation": "Network endpoint 203.0.113.25 is associated with wallet 0xWALLET001 (Synthetic Suspicious EOA) through an explicit fixture mapping (mapping_type='observed_endpoint').  This correlation is based on a curated public/fixture dataset and does NOT establish ownership of the wallet by the network operator.  Note: Synthetic fixture: IP 203.0.113.25 observed as a blockchain-related network endpoint. Does not establish wallet ownership.",
         "rule_id": "NETWORK_BLOCKCHAIN_EXPLICIT_MAPPING",
-        "timestamp": "2026-09-22T16:54:16.568380+00:00",
+        "timestamp": "2026-09-22T17:14:40.589733+00:00",
         "metadata": {
           "remote_address": "203.0.113.25",
           "wallet_address": "0xWALLET001",
@@ -8637,7 +8637,7 @@
         "score": 0.95,
         "explanation": "Wallet 0xWALLET001 sent 10.5 ETH to wallet 0xWALLET002 via transaction 0xTX001 (chain: ethereum, timestamp: 2026-09-12T16:00:00Z).  Both from_address and to_address match known wallet evidence records.",
         "rule_id": "WALLET_TRANSACTION_ADDRESS_MATCH",
-        "timestamp": "2026-09-22T16:54:16.568401+00:00",
+        "timestamp": "2026-09-22T17:14:40.589757+00:00",
         "metadata": {
           "tx_hash": "0xTX001",
           "chain": "ethereum",
@@ -8663,7 +8663,7 @@
         "score": 0.95,
         "explanation": "Wallet 0xWALLET002 sent 10.49 ETH to wallet 0xWALLET003 via transaction 0xTX002 (chain: ethereum, timestamp: 2026-09-12T16:15:00Z).  Both from_address and to_address match known wallet evidence records.",
         "rule_id": "WALLET_TRANSACTION_ADDRESS_MATCH",
-        "timestamp": "2026-09-22T16:54:16.568415+00:00",
+        "timestamp": "2026-09-22T17:14:40.589771+00:00",
         "metadata": {
           "tx_hash": "0xTX002",
           "chain": "ethereum",
@@ -8688,7 +8688,7 @@
         "score": 0.95,
         "explanation": "Transaction 0xTX003 delivers 5.0 ETH to wallet 0xWALLET003 on ethereum.  The to_address in the transaction record matches this wallet's address exactly.",
         "rule_id": "WALLET_TRANSACTION_ADDRESS_MATCH",
-        "timestamp": "2026-09-22T16:54:16.568428+00:00",
+        "timestamp": "2026-09-22T17:14:40.589784+00:00",
         "metadata": {
           "tx_hash": "0xTX003",
           "chain": "ethereum",
@@ -8714,7 +8714,7 @@
         "score": 1.0,
         "explanation": "Transaction 0xTX002 terminates at wallet 0xWALLET003, which is in the matched_wallets list for 'Example Exchange' (VASP attribution confidence: 1.00).  Transaction destination is associated with the VASP based on curated attribution evidence.  This does not prove the VASP owns or controls the sending party.",
         "rule_id": "TRANSACTION_VASP_ATTRIBUTION",
-        "timestamp": "2026-09-22T16:54:16.568451+00:00",
+        "timestamp": "2026-09-22T17:14:40.589806+00:00",
         "metadata": {
           "tx_hash": "0xTX002",
           "to_address": "0xWALLET003",
@@ -8738,7 +8738,7 @@
         "score": 0.55,
         "explanation": "Transaction 0xTX002 terminates at wallet 0xWALLET003, which is in the matched_wallets list for 'Example Custody Services' (VASP attribution confidence: 0.55).  Transaction destination is associated with the VASP based on curated attribution evidence.  This does not prove the VASP owns or controls the sending party.",
         "rule_id": "TRANSACTION_VASP_ATTRIBUTION",
-        "timestamp": "2026-09-22T16:54:16.568464+00:00",
+        "timestamp": "2026-09-22T17:14:40.589818+00:00",
         "metadata": {
           "tx_hash": "0xTX002",
           "to_address": "0xWALLET003",
@@ -8762,7 +8762,7 @@
         "score": 1.0,
         "explanation": "Transaction 0xTX003 terminates at wallet 0xWALLET003, which is in the matched_wallets list for 'Example Exchange' (VASP attribution confidence: 1.00).  Transaction destination is associated with the VASP based on curated attribution evidence.  This does not prove the VASP owns or controls the sending party.",
         "rule_id": "TRANSACTION_VASP_ATTRIBUTION",
-        "timestamp": "2026-09-22T16:54:16.568477+00:00",
+        "timestamp": "2026-09-22T17:14:40.589830+00:00",
         "metadata": {
           "tx_hash": "0xTX003",
           "to_address": "0xWALLET003",
@@ -8786,7 +8786,7 @@
         "score": 0.55,
         "explanation": "Transaction 0xTX003 terminates at wallet 0xWALLET003, which is in the matched_wallets list for 'Example Custody Services' (VASP attribution confidence: 0.55).  Transaction destination is associated with the VASP based on curated attribution evidence.  This does not prove the VASP owns or controls the sending party.",
         "rule_id": "TRANSACTION_VASP_ATTRIBUTION",
-        "timestamp": "2026-09-22T16:54:16.568487+00:00",
+        "timestamp": "2026-09-22T17:14:40.589841+00:00",
         "metadata": {
           "tx_hash": "0xTX003",
           "to_address": "0xWALLET003",
@@ -8815,7 +8815,7 @@
         "score": 0.65,
         "explanation": "Evidence forms a supported primary multi-domain investigation chain spanning: NETWORK \u2194 BLOCKCHAIN \u2192 PROCESS \u2194 NETWORK \u2192 TRANSACTION \u2194 VASP \u2192 WALLET \u2194 TRANSACTION.  The chain is assembled from 5 individual correlation finding(s) across 4 domain pair(s).  Overall chain confidence: 0.65 (weakest-link of individual findings: [0.9, 0.65, 0.95, 0.95, 1.0]).  This finding represents correlated evidence \u2014 it does NOT assert that the process, network endpoint, wallet, or VASP are the same entity or that any party is directly responsible for another's actions.",
         "rule_id": "CROSS_DOMAIN_CHAIN",
-        "timestamp": "2026-09-22T16:54:16.568911+00:00",
+        "timestamp": "2026-09-22T17:14:40.590245+00:00",
         "metadata": {
           "num_findings": 5,
           "domain_types": [
@@ -8862,7 +8862,7 @@
         "score": 0.55,
         "explanation": "Evidence forms a supported secondary multi-domain investigation chain spanning: NETWORK \u2194 BLOCKCHAIN \u2192 PROCESS \u2194 NETWORK \u2192 TRANSACTION \u2194 VASP \u2192 WALLET \u2194 TRANSACTION.  The chain is assembled from 5 individual correlation finding(s) across 4 domain pair(s).  Overall chain confidence: 0.55 (weakest-link of individual findings: [0.9, 0.65, 0.95, 0.95, 0.55]).  This finding represents correlated evidence \u2014 it does NOT assert that the process, network endpoint, wallet, or VASP are the same entity or that any party is directly responsible for another's actions.",
         "rule_id": "CROSS_DOMAIN_CHAIN",
-        "timestamp": "2026-09-22T16:54:16.568942+00:00",
+        "timestamp": "2026-09-22T17:14:40.590275+00:00",
         "metadata": {
           "num_findings": 5,
           "domain_types": [
@@ -9394,11 +9394,11 @@
           "relationship_type": "CONNECTS_TO",
           "confidence": 1.0,
           "evidence_ids": [
-            "EVID-NETC-2f6c94f692a6",
-            "EVID-PROC-a1dd51837709"
+            "EVID-PROC-a1dd51837709",
+            "EVID-NETC-2f6c94f692a6"
           ],
           "correlation_id": "CORR-PROCESSN-5856c6bb452d",
-          "timestamp": "2026-09-22T16:54:16.568296+00:00",
+          "timestamp": "2026-09-22T17:14:40.589650+00:00",
           "label": "CONNECTS_TO",
           "metadata": {
             "pid": 4821,
@@ -9421,7 +9421,7 @@
             "EVID-PROC-8887a167c203"
           ],
           "correlation_id": "CORR-PROCESSN-95d9b009cb71",
-          "timestamp": "2026-09-22T16:54:16.568321+00:00",
+          "timestamp": "2026-09-22T17:14:40.589675+00:00",
           "label": "CONNECTS_TO",
           "metadata": {
             "pid": 5102,
@@ -9491,8 +9491,8 @@
           "relationship_type": "SENT_TO",
           "confidence": 1.0,
           "evidence_ids": [
-            "EVID-WLLT-eca23315ae26",
             "EVID-WLLT-b688c6bc1007",
+            "EVID-WLLT-eca23315ae26",
             "EVID-TXID-31040361933c"
           ],
           "correlation_id": "CORR-WALLETTR-35eb97550d6b",
@@ -9552,9 +9552,9 @@
           "relationship_type": "SENT_TO",
           "confidence": 1.0,
           "evidence_ids": [
+            "EVID-TXID-8027690d9240",
             "EVID-WLLT-09686547e96b",
-            "EVID-WLLT-eca23315ae26",
-            "EVID-TXID-8027690d9240"
+            "EVID-WLLT-eca23315ae26"
           ],
           "correlation_id": "CORR-WALLETTR-cb970d15bbb1",
           "timestamp": "2026-09-12T16:15:00Z",
@@ -9687,7 +9687,7 @@
             "EVID-NETC-2f6c94f692a6"
           ],
           "correlation_id": "CORR-NETWORKB-efa1d58dc834",
-          "timestamp": "2026-09-22T16:54:16.568343+00:00",
+          "timestamp": "2026-09-22T17:14:40.589697+00:00",
           "label": "RESOLVES_TO",
           "metadata": {
             "correlation_rule": "NETWORK_DNS_RECORD_MATCH",
@@ -9704,11 +9704,11 @@
           "relationship_type": "RESOLVES_TO",
           "confidence": 0.9,
           "evidence_ids": [
-            "EVID-DNSR-5d35072c24c9",
-            "EVID-NETC-b3b4936a8ec3"
+            "EVID-NETC-b3b4936a8ec3",
+            "EVID-DNSR-5d35072c24c9"
           ],
           "correlation_id": "CORR-NETWORKB-f18baf3d95b4",
-          "timestamp": "2026-09-22T16:54:16.568357+00:00",
+          "timestamp": "2026-09-22T17:14:40.589711+00:00",
           "label": "RESOLVES_TO",
           "metadata": {
             "correlation_rule": "NETWORK_DNS_RECORD_MATCH",
@@ -9729,7 +9729,7 @@
             "EVID-NETC-2f6c94f692a6"
           ],
           "correlation_id": "CORR-NETWORKB-a9e8c984e0ec",
-          "timestamp": "2026-09-22T16:54:16.568380+00:00",
+          "timestamp": "2026-09-22T17:14:40.589733+00:00",
           "label": "ASSOCIATED_WITH",
           "metadata": {
             "correlation_rule": "NETWORK_BLOCKCHAIN_EXPLICIT_MAPPING",
@@ -9748,12 +9748,12 @@
           "relationship_type": "SENT_TO",
           "confidence": 0.95,
           "evidence_ids": [
-            "EVID-WLLT-eca23315ae26",
             "EVID-WLLT-b688c6bc1007",
+            "EVID-WLLT-eca23315ae26",
             "EVID-TXID-31040361933c"
           ],
           "correlation_id": "CORR-WALLETTR-35eb97550d6b",
-          "timestamp": "2026-09-22T16:54:16.568401+00:00",
+          "timestamp": "2026-09-22T17:14:40.589757+00:00",
           "label": "SENT_TO",
           "metadata": {
             "correlation_rule": "WALLET_TRANSACTION_ADDRESS_MATCH",
@@ -9774,12 +9774,12 @@
           "relationship_type": "SENT_TO",
           "confidence": 0.95,
           "evidence_ids": [
+            "EVID-TXID-8027690d9240",
             "EVID-WLLT-09686547e96b",
-            "EVID-WLLT-eca23315ae26",
-            "EVID-TXID-8027690d9240"
+            "EVID-WLLT-eca23315ae26"
           ],
           "correlation_id": "CORR-WALLETTR-cb970d15bbb1",
-          "timestamp": "2026-09-22T16:54:16.568415+00:00",
+          "timestamp": "2026-09-22T17:14:40.589771+00:00",
           "label": "SENT_TO",
           "metadata": {
             "correlation_rule": "WALLET_TRANSACTION_ADDRESS_MATCH",
@@ -9800,11 +9800,11 @@
           "relationship_type": "SENT_TO",
           "confidence": 0.95,
           "evidence_ids": [
-            "EVID-TXID-e791432880de",
-            "EVID-WLLT-09686547e96b"
+            "EVID-WLLT-09686547e96b",
+            "EVID-TXID-e791432880de"
           ],
           "correlation_id": "CORR-WALLETTR-70e995ae1140",
-          "timestamp": "2026-09-22T16:54:16.568428+00:00",
+          "timestamp": "2026-09-22T17:14:40.589784+00:00",
           "label": "SENT_TO",
           "metadata": {
             "correlation_rule": "WALLET_TRANSACTION_ADDRESS_MATCH",
@@ -9826,11 +9826,11 @@
           "relationship_type": "ATTRIBUTED_TO",
           "confidence": 1.0,
           "evidence_ids": [
-            "EVID-TXID-8027690d9240",
-            "EVID-VASP-04971e92f9dc"
+            "EVID-VASP-04971e92f9dc",
+            "EVID-TXID-8027690d9240"
           ],
           "correlation_id": "CORR-TRANSACT-922d209d7fd0",
-          "timestamp": "2026-09-22T16:54:16.568451+00:00",
+          "timestamp": "2026-09-22T17:14:40.589806+00:00",
           "label": "ATTRIBUTED_TO",
           "metadata": {
             "correlation_rule": "TRANSACTION_VASP_ATTRIBUTION",
@@ -9850,11 +9850,11 @@
           "relationship_type": "ATTRIBUTED_TO",
           "confidence": 0.55,
           "evidence_ids": [
-            "EVID-VASP-8d797a6d39f0",
-            "EVID-TXID-8027690d9240"
+            "EVID-TXID-8027690d9240",
+            "EVID-VASP-8d797a6d39f0"
           ],
           "correlation_id": "CORR-TRANSACT-e40a5a478b62",
-          "timestamp": "2026-09-22T16:54:16.568464+00:00",
+          "timestamp": "2026-09-22T17:14:40.589818+00:00",
           "label": "ATTRIBUTED_TO",
           "metadata": {
             "correlation_rule": "TRANSACTION_VASP_ATTRIBUTION",
@@ -9874,11 +9874,11 @@
           "relationship_type": "ATTRIBUTED_TO",
           "confidence": 1.0,
           "evidence_ids": [
-            "EVID-TXID-e791432880de",
-            "EVID-VASP-04971e92f9dc"
+            "EVID-VASP-04971e92f9dc",
+            "EVID-TXID-e791432880de"
           ],
           "correlation_id": "CORR-TRANSACT-6a7dad909f93",
-          "timestamp": "2026-09-22T16:54:16.568477+00:00",
+          "timestamp": "2026-09-22T17:14:40.589830+00:00",
           "label": "ATTRIBUTED_TO",
           "metadata": {
             "correlation_rule": "TRANSACTION_VASP_ATTRIBUTION",
@@ -9898,11 +9898,11 @@
           "relationship_type": "ATTRIBUTED_TO",
           "confidence": 0.55,
           "evidence_ids": [
-            "EVID-VASP-8d797a6d39f0",
-            "EVID-TXID-e791432880de"
+            "EVID-TXID-e791432880de",
+            "EVID-VASP-8d797a6d39f0"
           ],
           "correlation_id": "CORR-TRANSACT-ea2ed8943e5b",
-          "timestamp": "2026-09-22T16:54:16.568487+00:00",
+          "timestamp": "2026-09-22T17:14:40.589841+00:00",
           "label": "ATTRIBUTED_TO",
           "metadata": {
             "correlation_rule": "TRANSACTION_VASP_ATTRIBUTION",
@@ -9916,8 +9916,8 @@
           }
         }
       ],
-      "generated_at": "2026-09-22T16:54:16.574743+00:00",
-      "graph_hash": "932e322fa56612fe9e4f3d0e3565647ec97d40b10002fbdd8e12373f69525ac6",
+      "generated_at": "2026-09-22T17:14:40.595967+00:00",
+      "graph_hash": "61d85df688715a5d7b94a61fb8f78fa64b8faee3845a5e840248a8a8e7aa92b1",
       "metadata": {
         "cross_domain_findings": [
           {
@@ -9939,7 +9939,7 @@
             "score": 0.65,
             "explanation": "Evidence forms a supported primary multi-domain investigation chain spanning: NETWORK \u2194 BLOCKCHAIN \u2192 PROCESS \u2194 NETWORK \u2192 TRANSACTION \u2194 VASP \u2192 WALLET \u2194 TRANSACTION.  The chain is assembled from 5 individual correlation finding(s) across 4 domain pair(s).  Overall chain confidence: 0.65 (weakest-link of individual findings: [0.9, 0.65, 0.95, 0.95, 1.0]).  This finding represents correlated evidence \u2014 it does NOT assert that the process, network endpoint, wallet, or VASP are the same entity or that any party is directly responsible for another's actions.",
             "rule_id": "CROSS_DOMAIN_CHAIN",
-            "timestamp": "2026-09-22T16:54:16.568911+00:00",
+            "timestamp": "2026-09-22T17:14:40.590245+00:00",
             "metadata": {
               "num_findings": 5,
               "domain_types": [
@@ -9986,7 +9986,7 @@
             "score": 0.55,
             "explanation": "Evidence forms a supported secondary multi-domain investigation chain spanning: NETWORK \u2194 BLOCKCHAIN \u2192 PROCESS \u2194 NETWORK \u2192 TRANSACTION \u2194 VASP \u2192 WALLET \u2194 TRANSACTION.  The chain is assembled from 5 individual correlation finding(s) across 4 domain pair(s).  Overall chain confidence: 0.55 (weakest-link of individual findings: [0.9, 0.65, 0.95, 0.95, 0.55]).  This finding represents correlated evidence \u2014 it does NOT assert that the process, network endpoint, wallet, or VASP are the same entity or that any party is directly responsible for another's actions.",
             "rule_id": "CROSS_DOMAIN_CHAIN",
-            "timestamp": "2026-09-22T16:54:16.568942+00:00",
+            "timestamp": "2026-09-22T17:14:40.590275+00:00",
             "metadata": {
               "num_findings": 5,
               "domain_types": [
@@ -10030,6 +10030,6 @@
       }
     },
     "metadata": {},
-    "package_hash": "48e9e6de18a912b33958de87d68f92ddec6a4496b6a6d84d2704cea6d826e87d"
+    "package_hash": "632c9b9c7c63e6e57fed499ed858294b36f3faee9c1bb889d1fc65569a181b30"
   }
 }

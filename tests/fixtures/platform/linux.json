@@ -3,8 +3,8 @@
     "os_name": "Ubuntu 22.04 LTS",
     "os_version": "22.04",
     "architecture": "x86_64",
-    "hostname": "LINUX-FORENSIC-01",
-    "runtime": "Python 3.11.6",
+    "hostname": "LAB-PC-01",
+    "runtime": "Python 3.12.3 (CPython)",
     "adapter_name": "LinuxPlatformAdapter"
   },
   "security_status": {

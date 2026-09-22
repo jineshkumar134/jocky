@@ -170,8 +170,27 @@ class TestPlatformFixtures:
         )
 
         assert p_info.os_name == "Ubuntu 22.04 LTS"
+        assert p_info.hostname == "LAB-PC-01"
+        assert p_info.runtime == "Python 3.12.3 (CPython)"
         assert sec.hvci.applicable is False
         assert sec.secure_boot.enabled is True
+
+    def test_lab_pc01_runtime_consistency(self):
+        """Regression: platform fixture and endpoint system fixture must agree on LAB-PC-01 runtime."""
+        platform_fixture = Path("tests/fixtures/platform/linux.json")
+        system_fixture = Path("tests/fixtures/endpoint/system.json")
+
+        platform_data = json.loads(platform_fixture.read_text(encoding="utf-8"))
+        system_data = json.loads(system_fixture.read_text(encoding="utf-8"))
+
+        platform_runtime = platform_data["platform_info"]["runtime"]
+        system_runtime = system_data["runtime"]
+
+        # Both must share the same canonical runtime version string
+        assert platform_runtime == system_runtime, (
+            f"Runtime inconsistency: platform_info.runtime={platform_runtime!r} "
+            f"vs system artifact runtime={system_runtime!r}"
+        )
 
 
 # ──────────────────────────────────────────────────────────
