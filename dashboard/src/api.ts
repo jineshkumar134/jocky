@@ -96,11 +96,9 @@ export const api = {
           adapter_name: 'GenericPlatformAdapter',
         },
         security_status: {
-          hvci: { enabled: true, available: true, applicable: true },
-          vbs: { enabled: true, available: true, applicable: true },
-          secure_boot: { enabled: true, available: true, applicable: true },
-          platform: 'Linux',
-          evaluated_at: mockData.started_at,
+          hvci: { applicable: false, available: false, enabled: null, source: 'unsupported_on_linux' },
+          vbs: { applicable: false, available: false, enabled: null, source: 'unsupported_on_linux' },
+          secure_boot: { applicable: true, available: true, enabled: true, source: 'sysfs:efivars' },
         },
       },
       {
@@ -115,14 +113,12 @@ export const api = {
           architecture: 'x86_64',
           hostname: 'LAB-PC-03',
           runtime: 'Remote Agent',
-          adapter_name: 'GenericPlatformAdapter',
+          adapter_name: 'LinuxPlatformAdapter',
         },
         security_status: {
-          hvci: { enabled: true, available: true, applicable: true },
-          vbs: { enabled: true, available: true, applicable: true },
-          secure_boot: { enabled: true, available: true, applicable: true },
-          platform: 'Linux',
-          evaluated_at: mockData.started_at,
+          hvci: { applicable: false, available: false, enabled: null, source: 'unsupported_on_linux' },
+          vbs: { applicable: false, available: false, enabled: null, source: 'unsupported_on_linux' },
+          secure_boot: { applicable: true, available: true, enabled: true, source: 'sysfs:efivars' },
         },
       },
     ]),
@@ -151,17 +147,10 @@ export const api = {
     fetchJson<RiskData>(`${API_BASE}/cases/${caseId}/risk`, () => mockData.risk_assessment || { case_id: mockData.case_id, host: mockData.host, risk_score: 85, severity: 'HIGH', host_risk_scores: {}, findings: [] }),
 
   getCaseBlockchain: (caseId: string) =>
-    fetchJson<BlockchainVaspResponse>(`${API_BASE}/cases/${caseId}/blockchain`, () => {
-      const ops = mockData.operations || [];
-      const traceOp = ops.find((o: any) => o.operation === 'BLOCKCHAIN_TRACE') || {};
-      const vaspOp = ops.find((o: any) => o.operation === 'IDENTIFY_VASP') || {};
-      return {
-        case_id: mockData.case_id,
-        host: mockData.host,
-        tracing: traceOp.data || {},
-        vasp: vaspOp.data || {},
-      };
-    }),
+    fetchJson<BlockchainVaspResponse>(`${API_BASE}/cases/${caseId}/blockchain`, () => ({
+      blockchain: mockData.blockchain,
+      vasp: mockData.vasp,
+    })),
 
   getCaseAnchoring: (caseId: string) =>
     fetchJson<AnchoringResponse>(`${API_BASE}/cases/${caseId}/anchoring`, () => {
@@ -169,15 +158,13 @@ export const api = {
       const anchorOp = ops.find((o: any) => o.operation === 'ANCHOR_EVIDENCE') || {};
       const verifyOp = ops.find((o: any) => o.operation === 'VERIFY_EVIDENCE') || {};
       return {
-        case_id: mockData.case_id,
-        host: mockData.host,
-        anchoring: anchorOp.data || {},
-        verification: verifyOp.data || {},
+        anchor: anchorOp.data || undefined,
+        verification: verifyOp.data || undefined,
       };
     }),
 
   getCaseResearch: (caseId: string) =>
-    fetchJson<ResearchResultItem[]>(`${API_BASE}/cases/${caseId}/research`, () => mockData.research_lab || []),
+    fetchJson<ResearchResultItem[]>(`${API_BASE}/cases/${caseId}/research`, () => mockData.research_results || []),
 
   getHealth: () =>
     fetchJson<{ status: string; service: string; version: string; phase: string }>(

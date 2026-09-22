@@ -48,6 +48,7 @@ export interface SecurityFeatureStatus {
   enabled: boolean | null;
   available: boolean;
   applicable: boolean;
+  source?: string | null;
   reason?: string | null;
 }
 
@@ -55,8 +56,8 @@ export interface SecurityStatus {
   hvci: SecurityFeatureStatus;
   vbs: SecurityFeatureStatus;
   secure_boot: SecurityFeatureStatus;
-  platform: string;
-  evaluated_at: string;
+  platform?: string;
+  evaluated_at?: string;
 }
 
 export interface CaseDetails {

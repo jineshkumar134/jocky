@@ -30,6 +30,8 @@ async def test_get_case_details():
         assert data["case_id"] == "JOCKY-FINAL-2026"
         assert "case_management" in data
         assert "platform_info" in data
+        assert data["platform_info"]["architecture"] == "x86_64"
+        assert "Ubuntu" in data["platform_info"]["os_name"] or "Linux" in data["platform_info"]["os_name"]
         assert "security_status" in data
 
 
@@ -45,6 +47,9 @@ async def test_get_case_hosts():
         assert "LAB-PC-01" in hostnames
         assert "LAB-PC-02" in hostnames
         assert "LAB-PC-03" in hostnames
+        primary = next(h for h in hosts if h["hostname"] == "LAB-PC-01")
+        assert primary["is_primary"] is True
+        assert primary["platform_info"]["architecture"] == "x86_64"
 
 
 @pytest.mark.asyncio
@@ -106,6 +111,9 @@ async def test_get_case_blockchain():
         b = response.json()
         assert "blockchain" in b
         assert "vasp" in b
+        assert len(b["blockchain"]["hops"]) >= 2
+        assert len(b["blockchain"]["wallets"]) >= 3
+        assert len(b["vasp"]["attributions"]) >= 1
 
 
 @pytest.mark.asyncio
@@ -129,6 +137,7 @@ async def test_get_case_security():
         sec = response.json()
         assert "platform_info" in sec
         assert "security_status" in sec
+        assert sec["platform_info"]["architecture"] == "x86_64"
 
 
 @pytest.mark.asyncio
@@ -138,7 +147,16 @@ async def test_get_case_research():
         response = await client.get("/api/cases/JOCKY-FINAL-2026/research")
         assert response.status_code == 200
         data = response.json()
-        assert len(data) >= 5
+        assert len(data) == 5
         scenario_ids = [item["scenario"]["scenario_id"] for item in data]
         assert "synthetic_polymorphism" in scenario_ids
+        assert "synthetic_memory_execution" in scenario_ids
         assert "synthetic_driver_risk" in scenario_ids
+        assert "synthetic_security_controls" in scenario_ids
+        assert "synthetic_network_behavior" in scenario_ids
+        for item in data:
+            assert "scenario" in item
+            assert "observables" in item
+            assert "findings" in item
+            assert "benchmark" in item
+            assert "result_hash" in item

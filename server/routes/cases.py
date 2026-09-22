@@ -12,7 +12,7 @@ from runtime.executor.executor import RuntimeExecutor
 from forensic.endpoint.fixture import FixtureEndpointAdapter
 from forensic.network.fixture import FixtureNetworkAdapter
 from blockchain.evm.adapter import EVMAdapter
-from forensic.platform.factory import PlatformAdapterFactory
+from forensic.platform.fixture import FixturePlatformAdapter
 from management.manager import CentralInvestigationManager
 
 router = APIRouter(prefix="/cases", tags=["Cases"])
@@ -72,7 +72,7 @@ def _get_or_run_case(case_id: str = "JOCKY-FINAL-2026") -> Dict[str, Any]:
     ea = FixtureEndpointAdapter(host="LAB-PC-01")
     na = FixtureNetworkAdapter(host="LAB-PC-01")
     ba = EVMAdapter()
-    pa = PlatformAdapterFactory.get_adapter()
+    pa = FixturePlatformAdapter(platform_name="linux", hostname="LAB-PC-01")
     executor = RuntimeExecutor(res.ir, adapter=ea, network_adapter=na, blockchain_adapter=ba, platform_adapter=pa)
     result = executor.execute()
     data = result.to_dict()
